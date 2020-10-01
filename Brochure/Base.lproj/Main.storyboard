@@ -28,23 +28,15 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Rn0-sV-MIF">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Rn0-sV-MIF">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Yw-XN-MLr">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="u9Y-Rm-waT">
-                                        <rect key="frame" x="143" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nNu-fC-dLk">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
                                         <connections>
-                                            <segue destination="N2V-Dp-XDV" kind="show" id="7eZ-8L-gGZ"/>
+                                            <segue destination="N2V-Dp-XDV" kind="show" id="87s-uO-ccf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -60,6 +52,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collection" destination="Luh-mu-x6q" id="Xeh-xL-mJw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -140,10 +135,18 @@
                     <navigationItem key="navigationItem" id="d5O-fd-rEe">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="DgM-JJ-npp">
                             <connections>
+                                <action selector="Edit" destination="N2V-Dp-XDV" id="CEa-ip-tBj"/>
                                 <segue destination="mB9-UV-pHA" kind="show" id="w7G-a7-cBQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="1gH-az-6zu" id="96M-kW-HC1"/>
+                        <outlet property="tenjiLabel" destination="OEr-I6-Ze6" id="sXf-nI-OUa"/>
+                        <outlet property="whereLabel" destination="QHS-nl-P6h" id="qGF-Nz-dyg"/>
+                        <outlet property="workImageView" destination="gcg-6H-qJq" id="eLf-g2-Xc1"/>
+                        <outlet property="workLabel" destination="3a0-6F-jQy" id="eaD-z6-NeB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAC-OF-pTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,6 +165,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="Save" destination="d93-dc-pyY" eventType="touchUpInside" id="zaz-dK-zXr"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-Ku-4oj">
                                 <rect key="frame" x="119" y="41" width="176" height="155"/>
@@ -172,6 +178,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="追加"/>
+                                <connections>
+                                    <action selector="AddMemo" destination="d93-dc-pyY" eventType="touchUpInside" id="JRt-VH-Joy"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="写真のメモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="APq-GD-zdW">
                                 <rect key="frame" x="247" y="357" width="129" height="94"/>
@@ -218,6 +227,14 @@
                         <viewLayoutGuide key="safeArea" id="nRY-OC-jWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="addDateTextField" destination="Clt-b6-qbT" id="XF8-9t-5fa"/>
+                        <outlet property="addMemoTextView" destination="QGL-Hs-nAQ" id="beH-0j-7kK"/>
+                        <outlet property="addTenjiTextField" destination="xom-2K-x8P" id="bhP-ye-zx7"/>
+                        <outlet property="addWhereTextField" destination="7vE-xO-pqA" id="G5N-DJ-e4K"/>
+                        <outlet property="addWorkImageView" destination="YDv-GX-jzA" id="zJF-KD-zJx"/>
+                        <outlet property="coverImage" destination="wmm-Ku-4oj" id="fNf-gG-rRj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf9-zz-nxe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -291,8 +308,20 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ztQ-su-UfC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yiO-uO-T2V"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yiO-uO-T2V">
+                            <connections>
+                                <action selector="save" destination="mB9-UV-pHA" id="kVy-b1-Yf9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="EditImageView" destination="KNY-o2-jBa" id="2iC-Pc-HYE"/>
+                        <outlet property="commentTextView" destination="pI6-Os-Gyp" id="QDj-xU-hRJ"/>
+                        <outlet property="dateTextField" destination="7NA-2i-MKs" id="xfw-Ux-9yj"/>
+                        <outlet property="memoTextView" destination="MbA-4A-X2A" id="g0g-9j-cQM"/>
+                        <outlet property="tenjiTextField" destination="rN0-eU-K33" id="fAx-SV-hlm"/>
+                        <outlet property="whereTextField" destination="11z-2E-xV4" id="H8a-zn-lWK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFd-OL-24d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

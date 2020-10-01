@@ -8,6 +8,14 @@
 import UIKit
 
 class EditViewController: UIViewController {
+    
+    @IBOutlet var whereTextField: UITextField!
+    @IBOutlet var dateTextField: UITextField!
+    @IBOutlet var tenjiTextField: UITextField!
+    
+    @IBOutlet var EditImageView: UIImageView!
+    @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var commentTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +23,9 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func save() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

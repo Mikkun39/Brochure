@@ -8,11 +8,26 @@
 import UIKit
 
 class AddViewController: UIViewController {
-
+    
+    @IBOutlet var coverImage: UIImageView!
+    @IBOutlet var addDateTextField: UITextField!
+    @IBOutlet var addWhereTextField: UITextField!
+    @IBOutlet var addTenjiTextField: UITextField!
+    @IBOutlet var addWorkImageView: UIImageView!
+    @IBOutlet var addMemoTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func AddMemo() {
+        
+    }
+    
+    @IBAction func Save() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 

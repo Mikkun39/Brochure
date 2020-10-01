@@ -8,11 +8,22 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet var whereLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var tenjiLabel: UILabel!
+    
+    @IBOutlet var workImageView: UIImageView!
+    @IBOutlet var workLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func Edit() {
+        
     }
     
 
