@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet var collection: UICollectionView!
 
@@ -18,16 +18,29 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         collection.dataSource = self
         collection.delegate = self
+        
+        // レイアウト設定
+        let layout = UICollectionViewFlowLayout()
+        //セルのサイズ
+        layout.itemSize = CGSize(width: 72, height: 120)
+        //セル同士の間隔
+        layout.minimumInteritemSpacing = 12
+        //セル同士の行間
+        layout.minimumLineSpacing = 48
+        //セル全体の余白
+        layout.sectionInset = UIEdgeInsets(top: 48, left: 60, bottom: 24, right: 60)
+        collection.collectionViewLayout = layout
+
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
         // 表示するセルを登録(先程命名した"Cell")
-        cell.backgroundColor = .red  // セルの色
+        cell.backgroundColor = .blue  // セルの色
         return cell
     }
 

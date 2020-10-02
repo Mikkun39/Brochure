@@ -24,10 +24,13 @@ class EditViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func save() {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func Save() {
+        self.navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func AddMemoList() {
+        
+    }
     /*
     // MARK: - Navigation
 
