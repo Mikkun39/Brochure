@@ -41,7 +41,6 @@ class DetailViewController: UIViewController {
         let realm = try! Realm()
         
         let detailResults = realm.objects(Detail.self).filter("detailId == \(iconNumber)").first
-        print(iconNumber)
     
         if detailResults != nil {
             editWhereText = detailResults?.whereText
@@ -70,6 +69,7 @@ class DetailViewController: UIViewController {
             nextVC?.dateText = self.dateLabel.text
             nextVC?.tenjiText = self.tenjiLabel.text
             nextVC?.commentText = self.commentLabel.text
+            nextVC?.detailNumber = self.iconNumber
         }
     }
     

@@ -35,9 +35,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <connections>
-                                            <segue destination="N2V-Dp-XDV" kind="show" id="87s-uO-ccf"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -54,6 +51,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collection" destination="Luh-mu-x6q" id="Xeh-xL-mJw"/>
+                        <segue destination="N2V-Dp-XDV" kind="show" identifier="toDetailViewController" id="8sR-8X-icx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -24,6 +24,9 @@ class EditViewController: UIViewController {
     var tenjiText: String?
     var memoText: [String]?
     var commentText: String?
+    
+    //選択されてきたアイコンの番号を確認するための変数
+    var detailNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,7 @@ class EditViewController: UIViewController {
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        let detailResults = realm.objects(Detail.self).filter("whereText == '浅草'").first
+        let detailResults = realm.objects(Detail.self).filter("detailId == \(detailNumber)").first
         
         //STEP.3 Realmに書き込み
         try! realm.write {
@@ -48,6 +51,7 @@ class EditViewController: UIViewController {
             detailResults?.whenText = dateTextField.text!
             detailResults?.whatTenjiText = tenjiTextField.text!
             detailResults?.memoText = commentTextView.text!
+            detailResults?.setValue(commentTextView.text, forKey: "memoText")
         }
 
         
