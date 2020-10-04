@@ -12,8 +12,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet var collection: UICollectionView!
     
+    //データの数を入れるための配列
+    var detailList: Results<Detail>!
+    
     //表紙のアイコンを入れるための配列
     var coverImageArray = [UIImage]()
+    
+    //選択中のアイコンを入れるための変数
+    var selectedIcon: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +41,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collection.collectionViewLayout = layout
 
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //realmの呼び込む
+        let realm = try! Realm()
+        
+        detailList = realm.objects(Detail.self)
+    
         collection.reloadData()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return detailList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,7 +64,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.backgroundColor = .blue  // セルの色
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIcon = Int(indexPath.row)
+        print(selectedIcon)
+        performSegue(withIdentifier: "DetailViewController", sender: nil)
 
-
+    }
+    
+    override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewController" {
+            let nextViewController = segue.destination as? DetailViewController
+            nextViewController?.iconNumber = self.selectedIcon
+            
+        }
+    }
 }
+
 

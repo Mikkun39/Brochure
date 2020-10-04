@@ -24,6 +24,9 @@ class DetailViewController: UIViewController {
     var editTenjiText: String?
     var editMemoText: [String]?
     var editCommentText: String?
+    
+    //選択されてきたアイコンの番号を確認するための変数
+    var iconNumber: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +40,8 @@ class DetailViewController: UIViewController {
         //realmから値を呼び出して反映
         let realm = try! Realm()
         
-        let detailResults = realm.objects(Detail.self).filter("whereText == '浅草'").first
+        let detailResults = realm.objects(Detail.self).filter("detailId == \(iconNumber)").first
+        print(iconNumber)
     
         if detailResults != nil {
             editWhereText = detailResults?.whereText
