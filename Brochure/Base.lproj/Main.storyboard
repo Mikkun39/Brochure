@@ -92,15 +92,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-6H-qJq">
-                                <rect key="frame" x="33" y="248" width="161" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJJ-gu-lpj">
-                                <rect key="frame" x="33" y="585" width="161" height="131"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nW-yH-Mf3">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="0nW-yH-Mf3">
                                 <rect key="frame" x="224" y="419" width="161" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -113,17 +105,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メモ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBG-ke-JsI">
-                                <rect key="frame" x="69" y="419" width="118" height="131"/>
+                                <rect key="frame" x="50" y="419" width="137" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メモ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sna-c7-sOy">
-                                <rect key="frame" x="224" y="585" width="118" height="131"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-6H-qJq">
+                                <rect key="frame" x="33" y="248" width="161" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="全体メモ欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5P-vw-JIf">
+                                <rect key="frame" x="112" y="599" width="192" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -135,12 +131,13 @@
                     <navigationItem key="navigationItem" id="d5O-fd-rEe">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="DgM-JJ-npp">
                             <connections>
-                                <action selector="Edit" destination="N2V-Dp-XDV" id="CEa-ip-tBj"/>
+                                <action selector="edit" destination="N2V-Dp-XDV" id="SWm-D0-me6"/>
                                 <segue destination="mB9-UV-pHA" kind="show" id="w7G-a7-cBQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentLabel" destination="H5P-vw-JIf" id="kGJ-ts-oq1"/>
                         <outlet property="dateLabel" destination="1gH-az-6zu" id="96M-kW-HC1"/>
                         <outlet property="tenjiLabel" destination="OEr-I6-Ze6" id="sXf-nI-OUa"/>
                         <outlet property="whereLabel" destination="QHS-nl-P6h" id="qGF-Nz-dyg"/>
@@ -166,12 +163,16 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="保存"/>
                                 <connections>
-                                    <action selector="Save" destination="d93-dc-pyY" eventType="touchUpInside" id="zaz-dK-zXr"/>
+                                    <action selector="save" destination="d93-dc-pyY" eventType="touchUpInside" id="8TY-dv-0tp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-Ku-4oj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="wmm-Ku-4oj">
                                 <rect key="frame" x="119" y="20" width="176" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="l8G-cM-MTL" appends="YES" id="fnX-3A-XMh"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhm-0e-ij6">
                                 <rect key="frame" x="303" y="302" width="73" height="63"/>
@@ -179,11 +180,11 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="追加"/>
                                 <connections>
-                                    <action selector="AddMemo" destination="d93-dc-pyY" eventType="touchUpInside" id="JRt-VH-Joy"/>
+                                    <action selector="addMemo" destination="d93-dc-pyY" eventType="touchUpInside" id="Dsg-3c-Jsd"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="写真のメモ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="APq-GD-zdW">
-                                <rect key="frame" x="247" y="390" width="129" height="94"/>
+                                <rect key="frame" x="247" y="390" width="129" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -211,9 +212,13 @@
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-GX-jzA">
-                                <rect key="frame" x="61" y="390" width="136" height="94"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-GX-jzA">
+                                <rect key="frame" x="51" y="390" width="143" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="52x-Zm-3PW" appends="YES" id="pPR-bi-abj"/>
+                                </connections>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="メモ欄" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QGL-Hs-nAQ">
                                 <rect key="frame" x="32" y="581" width="194" height="115"/>
@@ -223,14 +228,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wv-Vx-s2f">
-                                <rect key="frame" x="303" y="82" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="AddPhoto" destination="d93-dc-pyY" eventType="touchUpInside" id="1Ef-Da-VpX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nRY-OC-jWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -240,11 +237,22 @@
                         <outlet property="addMemoTextView" destination="QGL-Hs-nAQ" id="beH-0j-7kK"/>
                         <outlet property="addTenjiTextField" destination="xom-2K-x8P" id="bhP-ye-zx7"/>
                         <outlet property="addWhereTextField" destination="7vE-xO-pqA" id="G5N-DJ-e4K"/>
-                        <outlet property="addWorkImageView" destination="YDv-GX-jzA" id="zJF-KD-zJx"/>
+                        <outlet property="addWorkImageView" destination="YDv-GX-jzA" id="H4H-BJ-YIS"/>
+                        <outlet property="addWorkTextView" destination="APq-GD-zdW" id="GOQ-g6-xOv"/>
                         <outlet property="coverImageView" destination="wmm-Ku-4oj" id="XJt-bv-iE7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bf9-zz-nxe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="l8G-cM-MTL">
+                    <connections>
+                        <action selector="tapCoverImage:" destination="d93-dc-pyY" id="5Ut-Tx-oFk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="52x-Zm-3PW">
+                    <connections>
+                        <action selector="addWorkImage:" destination="d93-dc-pyY" id="C4A-rb-qO7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="811.95652173913049"/>
         </scene>
@@ -277,11 +285,11 @@
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNY-o2-jBa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="KNY-o2-jBa">
                                 <rect key="frame" x="30" y="242" width="167" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uf-ub-ksG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed" translatesAutoresizingMaskIntoConstraints="NO" id="1uf-ub-ksG">
                                 <rect key="frame" x="227" y="403" width="167" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -309,8 +317,7 @@
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="追加"/>
                                 <connections>
-                                    <action selector="AddMemo" destination="d93-dc-pyY" eventType="touchUpInside" id="kNy-Xk-tIq"/>
-                                    <action selector="AddMemoList" destination="mB9-UV-pHA" eventType="touchUpInside" id="RmN-fu-BtI"/>
+                                    <action selector="addMemoList" destination="mB9-UV-pHA" eventType="touchUpInside" id="chv-C3-puC"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="メモ欄" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pI6-Os-Gyp">
@@ -328,7 +335,7 @@
                     <navigationItem key="navigationItem" id="ztQ-su-UfC">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="yiO-uO-T2V">
                             <connections>
-                                <action selector="Save" destination="mB9-UV-pHA" id="Kp1-9K-c5Y"/>
+                                <action selector="save" destination="mB9-UV-pHA" id="2dp-lj-YvI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -365,6 +372,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="unnamed" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -16,6 +16,14 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var workImageView: UIImageView!
     @IBOutlet var workLabel: UILabel!
+    @IBOutlet var commentLabel: UILabel!
+    
+    // 遷移先から戻したい渡したい値を格納する変数を用意する
+    var editWhereText: String?
+    var editDateText: String?
+    var editTenjiText: String?
+    var editMemoText: [String]?
+    var editCommentText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +31,19 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func Edit() {
+    @IBAction func edit() {
+       
+            self.performSegue(withIdentifier: "EditViewController", sender: nil)
+    }
         
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditViewController" {
+            let nextVC = segue.destination as? EditViewController
+            nextVC?.whereText = self.whereLabel.text
+            nextVC?.dateText = self.dateLabel.text
+            nextVC?.tenjiText = self.tenjiLabel.text
+            nextVC?.commentText = self.commentLabel.text
+        }
     }
     
 

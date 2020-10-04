@@ -17,19 +17,36 @@ class EditViewController: UIViewController {
     @IBOutlet var EditImageView: UIImageView!
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var commentTextView: UITextView!
+    
+    // 1. 遷移先に渡したい値を格納する変数を用意する
+    var whereText: String?
+    var dateText: String?
+    var tenjiText: String?
+    var memoText: [String]?
+    var commentText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        whereTextField.text = whereText
+        dateTextField.text = dateText
+        tenjiTextField.text = tenjiText
+        commentTextView.text = commentText
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func Save() {
+    @IBAction func save() {
+        let preVC = self.presentingViewController as! DetailViewController
+        preVC.editWhereText = self.whereTextField.text
+        preVC.editDateText = self.dateTextField.text
+        preVC.editTenjiText = self.tenjiTextField.text
+        preVC.editCommentText = self.commentTextView.text
+        
         self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func AddMemoList() {
-        
+    @IBAction func addMemoList() {
+    
     }
     /*
     // MARK: - Navigation
