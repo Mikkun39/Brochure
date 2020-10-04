@@ -39,18 +39,24 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        let detail1 = Detail()
-        let tenjiSet1 = tenjiSet()
+        let detail = Detail()
+        let tenji = tenjiSet()
         
-        detail1.whereText = addWhereTextField.text!
-        detail1.whenText = addDateTextField.text!
-        detail1.whatTenjiText = addTenjiTextField.text!
-        tenjiSet1.tenjiMemo = addWorkTextView.text!
+        // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
+        if realm.objects(Detail.self).count != 0 {
+               detail.detailId = realm.objects(Detail.self).max(ofProperty: "detailId")! + 1
+        }
+        
+        detail.whereText = addWhereTextField.text!
+        detail.whenText = addDateTextField.text!
+        detail.whatTenjiText = addTenjiTextField.text!
+        detail.memoText = addMemoTextView.text!
+        tenji.tenjiMemo = addWorkTextView.text!
             
         //STEP.3 Realmに書き込み
         try! realm.write {
-         realm.add(tenjiSet1)
-         realm.add(detail1)
+         realm.add(tenji)
+         realm.add(detail)
         }
         
         

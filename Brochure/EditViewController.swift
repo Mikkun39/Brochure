@@ -36,11 +36,20 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func save() {
-        let preVC = self.presentingViewController as! DetailViewController
-        preVC.editWhereText = self.whereTextField.text
-        preVC.editDateText = self.dateTextField.text
-        preVC.editTenjiText = self.tenjiTextField.text
-        preVC.editCommentText = self.commentTextView.text
+        // Realmを初期化
+        let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+        let detailResults = realm.objects(Detail.self).filter("whereText == '浅草'").first
+        
+        //STEP.3 Realmに書き込み
+        try! realm.write {
+            detailResults?.whereText = whereTextField.text!
+            detailResults?.whenText = dateTextField.text!
+            detailResults?.whatTenjiText = tenjiTextField.text!
+            detailResults?.memoText = commentTextView.text!
+        }
+
         
         self.navigationController?.popViewController(animated: true)
     }

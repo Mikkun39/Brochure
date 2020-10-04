@@ -28,7 +28,30 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        //realmから値を呼び出して反映
+        let realm = try! Realm()
+        
+        let detailResults = realm.objects(Detail.self).filter("whereText == '浅草'").first
+    
+        if detailResults != nil {
+            editWhereText = detailResults?.whereText
+            editDateText = detailResults?.whenText
+            editTenjiText = detailResults?.whatTenjiText
+            editCommentText = detailResults?.memoText
+            
+            whereLabel.text = editWhereText
+            dateLabel.text = editDateText
+            tenjiLabel.text = editTenjiText
+            commentLabel.text = editCommentText
+        }
+        
+        
     }
     
     @IBAction func edit() {
