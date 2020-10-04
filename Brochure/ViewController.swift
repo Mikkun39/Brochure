@@ -68,12 +68,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIcon = Int(indexPath.row)
         print(selectedIcon)
-        performSegue(withIdentifier: "DetailViewController", sender: nil)
+        performSegue(withIdentifier: "toDetailViewController", sender: nil)
 
     }
     
     override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailViewController" {
+        if segue.identifier == "toDetailViewController" {
             let nextViewController = segue.destination as? DetailViewController
             nextViewController?.iconNumber = self.selectedIcon
             
