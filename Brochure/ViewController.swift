@@ -11,6 +11,9 @@ import RealmSwift
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet var collection: UICollectionView!
+    
+    //表紙のアイコンを入れるための配列
+    var coverImageArray = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.sectionInset = UIEdgeInsets(top: 48, left: 60, bottom: 24, right: 60)
         collection.collectionViewLayout = layout
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collection.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
