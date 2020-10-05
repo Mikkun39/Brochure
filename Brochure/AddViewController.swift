@@ -94,44 +94,44 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //表紙画像にフォトライブラリから写真を参照する
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        //imageに選んだ画像を設定
-        coverImage = info[.originalImage] as? UIImage
-        
-        //imageを表紙画像に設定
-        coverImageView.image = coverImage
-        
-        //フォトライブラリを閉じる
-        self.dismiss(animated: true, completion: nil)
+        if picker.title != "addWorkImage"{
+            //imageに選んだ画像を設定
+            coverImage = info[.originalImage] as? UIImage
+            
+            //imageを表紙画像に設定
+            coverImageView.image = coverImage
+            
+            //フォトライブラリを閉じる
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            //imageに選んだ画像を設定
+            let addImage = info[.originalImage] as? UIImage
+            
+            //imageを画像に設定
+            addWorkImageView.image = addImage
+            
+            //フォトライブラリを閉じる
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 
     @IBAction func addWorkImage(_ sender: Any) {
         
         //UIImagePickerControllerのインスタンスを作る
-        let addWorkImagePickerController: UIImagePickerController = UIImagePickerController()
+        let imagePickerController: UIImagePickerController = UIImagePickerController()
         
         //フォトライブラリを使う設定をする
-        addWorkImagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        addWorkImagePickerController.delegate = self
-        addWorkImagePickerController.allowsEditing = true
+        imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.title = "addWorkImage"
         
         //フォトライブラリを呼び出す
-        self.present(addWorkImagePickerController, animated: true, completion: nil)
+        self.present(imagePickerController, animated: true, completion: nil)
         
     }
-    
-    //作品の写真にフォトライブラリから写真を参照する
-    func addWorkImagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        //imageに選んだ画像を設定
-        let addImage = info[.originalImage] as? UIImage
-        
-        //imageを画像に設定
-        addWorkImageView.image = addImage
-        
-        //フォトライブラリを閉じる
-        self.dismiss(animated: true, completion: nil)
-    }
+   
     /*
     // MARK: - Navigation
 
