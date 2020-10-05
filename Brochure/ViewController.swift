@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //選択中のアイコンを入れるための変数
     var selectedIcon: Int = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let realm = try! Realm()
         
         detailList = realm.objects(Detail.self)
-    
+        
         collection.reloadData()
         
     }
@@ -62,6 +63,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
         // 表示するセルを登録(先程命名した"Cell")
         cell.backgroundColor = .blue  // セルの色
+        
+        //cellのimageを変更
+        // Tag番号を使ってImageViewのインスタンス生成
+        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        // 画像配列の番号で指定された要素の名前の画像をUIImageとする
+        let cellImage = detailList[indexPath.row].coverImage
+        // UIImageをUIImageViewのimageとして設定
+       
         return cell
     }
     

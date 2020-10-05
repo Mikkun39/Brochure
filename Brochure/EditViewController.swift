@@ -30,12 +30,26 @@ class EditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        whereTextField.text = whereText
-        dateTextField.text = dateText
-        tenjiTextField.text = tenjiText
-        commentTextView.text = commentText
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //realmから値を呼び出して反映
+        let realm = try! Realm()
+        
+        let detailResults = realm.objects(Detail.self).filter("detailId == \(detailNumber)").first
+    
+        if detailResults != nil {
+            whereText = detailResults?.whereText
+            dateText = detailResults?.whenText
+            tenjiText = detailResults?.whatTenjiText
+            commentText = detailResults?.memoText
+            
+            whereTextField.text = whereText
+            dateTextField.text = dateText
+            tenjiTextField.text = tenjiText
+            commentTextView.text = commentText
+        }
     }
     
     @IBAction func save() {

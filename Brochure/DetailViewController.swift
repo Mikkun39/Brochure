@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var workLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
     
-    // 遷移先から戻したい渡したい値を格納する変数を用意する
+    // realmから呼び出すための変数を用意する
     var editWhereText: String?
     var editDateText: String?
     var editTenjiText: String?
@@ -58,7 +58,6 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func edit() {
-       
             self.performSegue(withIdentifier: "EditViewController", sender: nil)
     }
         

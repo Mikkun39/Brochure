@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SSL-sU-oca">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SSL-sU-oca">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -34,6 +34,12 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Yw-XN-MLr">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AY7-pj-33U">
+                                                    <rect key="frame" x="12" y="8" width="104" height="112"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
@@ -130,7 +136,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="DgM-JJ-npp">
                             <connections>
                                 <action selector="edit" destination="N2V-Dp-XDV" id="SWm-D0-me6"/>
-                                <segue destination="mB9-UV-pHA" kind="show" id="w7G-a7-cBQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -141,6 +146,7 @@
                         <outlet property="whereLabel" destination="QHS-nl-P6h" id="qGF-Nz-dyg"/>
                         <outlet property="workImageView" destination="gcg-6H-qJq" id="eLf-g2-Xc1"/>
                         <outlet property="workLabel" destination="3a0-6F-jQy" id="eaD-z6-NeB"/>
+                        <segue destination="mB9-UV-pHA" kind="show" identifier="EditViewController" id="ZMn-eH-eF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAC-OF-pTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
