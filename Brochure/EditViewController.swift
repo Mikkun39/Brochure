@@ -55,7 +55,6 @@ class EditViewController: UIViewController {
     @IBAction func save() {
         // Realmを初期化
         let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         let detailResults = realm.objects(Detail.self).filter("detailId == \(detailNumber)").first
         

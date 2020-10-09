@@ -12,9 +12,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet var collection: UICollectionView!
     
+    @IBOutlet var coverImageView: UIImageView!
+    
     //データの数を入れるための配列
     var detailList: Results<Detail>!
-    
+   
     //表紙のアイコンを入れるための配列
     var coverImageArray = [UIImage]()
     
@@ -48,9 +50,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         //realmの呼び込む
         let realm = try! Realm()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         detailList = realm.objects(Detail.self)
+
         
+        //detailList = realm.objects(Detail.self)
+    
         collection.reloadData()
         
     }
@@ -65,12 +71,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         cell.backgroundColor = .blue  // セルの色
         
         //cellのimageを変更
+        
         // Tag番号を使ってImageViewのインスタンス生成
-        let imageView = cell.contentView.viewWithTag(1) as! UIImageView
+        coverImageView = cell.contentView.viewWithTag(1) as? UIImageView
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage = detailList[indexPath.row].coverImage
         // UIImageをUIImageViewのimageとして設定
-       
+        coverImageView.image = UIImage(data: cellImage! as Data)
+        
         return cell
     }
     

@@ -13,7 +13,7 @@ class Detail: Object {
     @objc dynamic var detailId: Int = 0
     
     //表紙の写真
-    @objc dynamic var coverImage: NSData? = nil
+    @objc dynamic var coverImage: Data? = nil
     
     //場所のテキスト
     @objc dynamic var whereText: String = ""

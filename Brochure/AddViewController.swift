@@ -44,8 +44,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func save() {
         
-        let data = NSData(data: coverImage.pngData()!)
-        
         // Realmを初期化
         let realm = try! Realm()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -62,7 +60,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         detail.whenText = addDateTextField.text!
         detail.whatTenjiText = addTenjiTextField.text!
         detail.memoText = addMemoTextView.text!
-        detail.coverImage = data
+        detail.coverImage = Data(coverImage.pngData()!)
         tenji.tenjiMemo = addWorkTextView.text!
         
         
