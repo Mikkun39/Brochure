@@ -34,7 +34,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // レイアウト設定
         let layout = UICollectionViewFlowLayout()
         //セルのサイズ
-        layout.itemSize = CGSize(width: 72, height: 120)
+        layout.itemSize = CGSize(width: 100, height: 140)
         //セル同士の間隔
         layout.minimumInteritemSpacing = 12
         //セル同士の行間
@@ -68,8 +68,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
         // 表示するセルを登録(先程命名した"Cell")
-        cell.backgroundColor = .blue  // セルの色
-        
         //cellのimageを変更
         
         // Tag番号を使ってImageViewのインスタンス生成
@@ -78,6 +76,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cellImage = detailList[indexPath.row].coverImage
         // UIImageをUIImageViewのimageとして設定
         coverImageView.image = UIImage(data: cellImage! as Data)
+        
+        coverImageView.contentMode = .scaleToFill
         
         return cell
     }

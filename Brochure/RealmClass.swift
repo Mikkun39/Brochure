@@ -37,7 +37,7 @@ class tenjiSet: Object {
     @objc dynamic var tenjiId: Int = 0
     
     //展示の写真
-    @objc dynamic var tenjiImage: NSData? = nil
+    @objc dynamic var tenjiImage: Data? = nil
     
     //展示のメモ
     @objc dynamic var tenjiMemo: String = ""
