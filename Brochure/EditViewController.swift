@@ -8,15 +8,16 @@
 import UIKit
 import RealmSwift
 
-class EditViewController: UIViewController {
+class EditViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var whereTextField: UITextField!
     @IBOutlet var dateTextField: UITextField!
     @IBOutlet var tenjiTextField: UITextField!
     
-    @IBOutlet var EditImageView: UIImageView!
+    @IBOutlet var editImageView: UIImageView!
     @IBOutlet var memoTextView: UITextView!
     @IBOutlet var commentTextView: UITextView!
+    @IBOutlet var editTable: UITableView!
     
     // 1. 遷移先に渡したい値を格納する変数を用意する
     var whereText: String?
@@ -27,10 +28,15 @@ class EditViewController: UIViewController {
     
     //選択されてきたアイコンの番号を確認するための変数
     var detailNumber: Int = 0
+    
+    //セルの数を管理するための変数
+    var cellCount: Int = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        editTable.delegate = self
+        editTable.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +44,8 @@ class EditViewController: UIViewController {
         let realm = try! Realm()
         
         let detailResults = realm.objects(Detail.self).filter("detailId == \(detailNumber)").first
+        
+        let tenjiResults = realm.objects(tenjiSet.self)
     
         if detailResults != nil {
             whereText = detailResults?.whereText
@@ -51,6 +59,24 @@ class EditViewController: UIViewController {
             commentTextView.text = commentText
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EditViewCell")
+        
+        // Tag番号を使ってImageViewのインスタンス生成
+        editImageView = cell!.contentView.viewWithTag(1) as? UIImageView
+        
+        memoTextView = cell!.contentView.viewWithTag(2) as? UITextView
+        
+        editImageView.isUserInteractionEnabled = true
+        
+        return cell!
+    }
+    
     
     @IBAction func save() {
         // Realmを初期化
@@ -72,7 +98,8 @@ class EditViewController: UIViewController {
     }
 
     @IBAction func addMemoList() {
-    
+        cellCount += 1
+        editTable.reloadData()
     }
     /*
     // MARK: - Navigation

@@ -8,8 +8,10 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+
     
+    @IBOutlet var table: UITableView!
     @IBOutlet var whereLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var tenjiLabel: UILabel!
@@ -17,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var workImageView: UIImageView!
     @IBOutlet var workLabel: UILabel!
     @IBOutlet var commentLabel: UILabel!
+
     
     // realmから呼び出すための変数を用意する
     var editWhereText: String?
@@ -31,12 +34,17 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        table.dataSource = self
+        table.delegate = self
         
+        table.estimatedRowHeight = 66
+        table.rowHeight = UITableView.automaticDimension
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+    
         //realmから値を呼び出して反映
         let realm = try! Realm()
         
@@ -56,6 +64,33 @@ class DetailViewController: UIViewController {
         
         
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailViewCell")
+        
+        // Tag番号を使ってImageViewのインスタンス生成
+        workImageView = cell!.contentView.viewWithTag(1) as? UIImageView
+        
+        workLabel = cell!.contentView.viewWithTag(2) as? UILabel
+        
+        let rColor: CGFloat = CGFloat(indexPath.row / 10)
+    
+        cell?.contentView.backgroundColor = UIColor(red: rColor , green:1.0 , blue:1.0 , alpha: 1.0)
+        
+        return cell!
+        
+    }
+    
+    
+   
+    
+    
+    
+    
     
     @IBAction func edit() {
             self.performSegue(withIdentifier: "EditViewController", sender: nil)

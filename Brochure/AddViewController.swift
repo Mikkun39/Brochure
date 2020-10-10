@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var coverImageView: UIImageView!
     @IBOutlet var addDateTextField: UITextField!
@@ -17,28 +17,55 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet var addWorkImageView: UIImageView!
     @IBOutlet var addWorkTextView: UITextView!
     @IBOutlet var addMemoTextView: UITextView!
+    @IBOutlet var addTable: UITableView!
     
     //UIImageを保存する
     var coverImage: UIImage!
     
     //各データのUIIMageを保存
-    var addImage = [UIImage]()
+    var addImage: UIImage!
 
+    //セルの数を保存
+    var cellCount: Int = 3
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        addTable.delegate = self
+        addTable.dataSource = self
+        
         //ImageViewのタップ認識をONにする
         coverImageView.isUserInteractionEnabled = true
-        addWorkImageView.isUserInteractionEnabled = true
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellCount
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddViewCell")
+        
+        // Tag番号を使ってImageViewのインスタンス生成
+        addWorkImageView = cell!.contentView.viewWithTag(1) as? UIImageView
+        
+        addWorkTextView = cell!.contentView.viewWithTag(2) as? UITextView
+        
+        addWorkImageView.isUserInteractionEnabled = true
+        return cell!
+    }
+    
+    
+    
     @IBAction func addMemo() {
-        let addImageView = UIImageView.init(frame: CGRect.init(x: self.addWorkImageView.frame.origin.x, y: self.addWorkImageView.frame.origin.y + 100, width: self.addWorkImageView.frame.width, height: self.addWorkImageView.frame.height))
-        addImageView.image = UIImage(named: "unnamed")
-        self.view.addSubview(addImageView)
+        //let addImageView = UIImageView.init(frame: CGRect.init(x: self.addWorkImageView.frame.origin.x, y: self.addWorkImageView.frame.origin.y + 100, width: self.addWorkImageView.frame.width, height: self.addWorkImageView.frame.height))
+        //addImageView.image = UIImage(named: "unnamed")
+        //self.view.addSubview(addImageView)
+        
+        cellCount += 1
+        
+        addTable.reloadData()
         
     }
     
@@ -61,6 +88,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         detail.whatTenjiText = addTenjiTextField.text!
         detail.memoText = addMemoTextView.text!
         detail.coverImage = Data(coverImage.pngData()!)
+        tenji.tenjiImage = Data(addImage.pngData()!)
         tenji.tenjiMemo = addWorkTextView.text!
         
         
@@ -103,7 +131,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             self.dismiss(animated: true, completion: nil)
         } else {
             //imageに選んだ画像を設定
-            let addImage = info[.originalImage] as? UIImage
+            addImage = info[.originalImage] as? UIImage
             
             //imageを画像に設定
             addWorkImageView.image = addImage
