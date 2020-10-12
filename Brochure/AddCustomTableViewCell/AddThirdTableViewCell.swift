@@ -10,6 +10,7 @@ import UIKit
 class AddThirdTableViewCell: UITableViewCell, UITextViewDelegate{
     
     @IBOutlet var addMemoTextView: UITextView!
+    @IBOutlet var memoLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

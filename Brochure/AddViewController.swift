@@ -369,8 +369,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             cellNumString4 = textView.text!
         }else if textView.tag == 200 {
             memoText = textView.text!
-            print(memoText)
+            
+            //メモが書いてあるときはlabelを非表示にする
+            if memoText.count != 0 {
+                thirdCell.memoLabel.isHidden = true
+            } else {
+                thirdCell.memoLabel.isHidden = false
+            }
         }
+        
     }
     
     //キーボード以外を触ることで、キーボードを閉じる
