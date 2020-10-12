@@ -179,6 +179,13 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
             thirdCell.addMemoTextView.delegate = self
             thirdCell.addMemoTextView.tag = 200
+            thirdCell.addMemoTextView.text = memoText
+            
+            //メモが書いてあるときはlabelを非表示にする
+            if memoText.count != 0 {
+                thirdCell.memoLabel.isHidden = true
+            }
+            
             return thirdCell
         }
         //return cell!
@@ -369,12 +376,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             cellNumString4 = textView.text!
         }else if textView.tag == 200 {
             memoText = textView.text!
-            
             //メモが書いてあるときはlabelを非表示にする
             if memoText.count != 0 {
                 thirdCell.memoLabel.isHidden = true
-            } else {
-                thirdCell.memoLabel.isHidden = false
             }
         }
         
