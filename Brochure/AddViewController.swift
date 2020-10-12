@@ -24,6 +24,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var workText: String = ""
     var memoText: String = ""
     
+    //detailviewからのsegueからなのかを判定する
+    var judgeText: String = ""
     
     //UIImageを保存する
     var coverImage: UIImage!
@@ -56,6 +58,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var cellNumString3: String = ""
     var cellNumString4: String = ""
     
+    //選択されたてきたアイコンの番号を確認するための変数
+    var detailToEditNumber: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -78,7 +83,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         addTable.register(UINib(nibName: "AddThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "AddThirdTableViewCell")
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -195,95 +199,122 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //}
     
     @IBAction func save() {
-        
-        // Realmを初期化
-        let realm = try! Realm()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        let detail = Detail()
-        
-        // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
-        if realm.objects(Detail.self).count != 0 {
-            detail.detailId = realm.objects(Detail.self).max(ofProperty: "detailId")! + 1
-        }
-        
-        
-        detail.whereText = whereText
-        detail.whenText = dateText
-        detail.whatTenjiText = tenjiText
-        detail.memoText = memoText
-        detail.coverImage = Data(coverImage.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiImage0 = Data(cellNumImage0.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiImage1 = Data(cellNumImage1.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiImage2 = Data(cellNumImage2.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiImage3 = Data(cellNumImage3.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiImage4 = Data(cellNumImage4.jpegData(compressionQuality: 0.9)!)
-        detail.tenjiMemo0 = cellNumString0
-        detail.tenjiMemo1 = cellNumString1
-        detail.tenjiMemo2 = cellNumString2
-        detail.tenjiMemo3 = cellNumString3
-        detail.tenjiMemo4 = cellNumString4
-        
-        
-        //STEP.3 Realmに書き込み
-        try! realm.write {
-            realm.add(detail)
-        }
-        
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    //表紙の画像を選択する処理
-    @objc func tapCoverImage(recognizer: UITapGestureRecognizer) {
-        
-        //UIImagePickerControllerのインスタンスを作る
-        let imagePickerController: UIImagePickerController = UIImagePickerController()
-        
-        //フォトライブラリを使う設定をする
-        imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
-        imagePickerController.delegate = self
-        imagePickerController.allowsEditing = true
-        
-        //フォトライブラリを呼び出す
-        self.present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    //表紙画像にフォトライブラリから写真を参照する
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        if picker.title != "addWorkImage"{
-            //imageに選んだ画像を設定
-            coverImage = info[.originalImage] as? UIImage
+        if judgeText == "" {
+            // Realmを初期化
+            let realm = try! Realm()
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
             
-            addTable.reloadData()
+            let detail = Detail()
             
-            //フォトライブラリを閉じる
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            //imageに選んだ画像を設定
-            var addImage: UIImage!
-            
-            addImage = info[.originalImage] as? UIImage
-            
-            //cellNumImageDic[selectedCellNumber + 1] = addImage
-            
-            if selectedCellNumber == 0{
-                cellNumImage0 = addImage
-            } else if selectedCellNumber == 1 {
-                cellNumImage1 = addImage
-            } else if selectedCellNumber == 2 {
-                cellNumImage2 = addImage
-            } else if selectedCellNumber == 3 {
-                cellNumImage3 = addImage
-            } else if selectedCellNumber == 4 {
-                cellNumImage4 = addImage
+            // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
+            if realm.objects(Detail.self).count != 0 {
+                detail.detailId = realm.objects(Detail.self).max(ofProperty: "detailId")! + 1
             }
             
-            addTable.reloadData()
-            //フォトライブラリを閉じる
-            self.dismiss(animated: true, completion: nil)
+            
+            detail.whereText = whereText
+            detail.whenText = dateText
+            detail.whatTenjiText = tenjiText
+            detail.memoText = memoText
+            detail.coverImage = Data(coverImage.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage0 = Data(cellNumImage0.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage1 = Data(cellNumImage1.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage2 = Data(cellNumImage2.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage3 = Data(cellNumImage3.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage4 = Data(cellNumImage4.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiMemo0 = cellNumString0
+            detail.tenjiMemo1 = cellNumString1
+            detail.tenjiMemo2 = cellNumString2
+            detail.tenjiMemo3 = cellNumString3
+            detail.tenjiMemo4 = cellNumString4
+            
+            
+            //STEP.3 Realmに書き込み
+            try! realm.write {
+                realm.add(detail)
+            }
+
+            self.navigationController?.popViewController(animated: true)
+            }
+        
+        if judgeText == "DetailViewからAddViewへ"{
+                // Realmを初期化
+                let realm = try! Realm()
+                
+                let detailResults = realm.objects(Detail.self).filter("detailId == \(detailToEditNumber)").first
+                
+                //STEP.3 Realmに書き込み
+                try! realm.write {
+                    detailResults?.coverImage = Data(coverImage.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.whereText = whereText
+                    detailResults?.whenText = dateText
+                    detailResults?.whatTenjiText = tenjiText
+                    detailResults?.memoText = memoText
+                    detailResults?.tenjiImage0 = Data(cellNumImage0.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.tenjiImage1 = Data(cellNumImage1.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.tenjiImage2 = Data(cellNumImage2.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.tenjiImage3 = Data(cellNumImage3.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.tenjiImage4 = Data(cellNumImage4.jpegData(compressionQuality: 0.9)!)
+                    detailResults?.tenjiMemo0 = cellNumString0
+                    detailResults?.tenjiMemo1 = cellNumString1
+                    detailResults?.tenjiMemo2 = cellNumString2
+                    detailResults?.tenjiMemo3 = cellNumString3
+                    detailResults?.tenjiMemo4 = cellNumString4
+                }
+            self.navigationController?.popViewController(animated: true)
         }
+    }
+        
+        //表紙の画像を選択する処理
+        @objc func tapCoverImage(recognizer: UITapGestureRecognizer) {
+            
+            //UIImagePickerControllerのインスタンスを作る
+            let imagePickerController: UIImagePickerController = UIImagePickerController()
+            
+            //フォトライブラリを使う設定をする
+            imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePickerController.delegate = self
+            imagePickerController.allowsEditing = true
+            
+            //フォトライブラリを呼び出す
+            self.present(imagePickerController, animated: true, completion: nil)
+        }
+        
+        //表紙画像にフォトライブラリから写真を参照する
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            if picker.title != "addWorkImage"{
+                //imageに選んだ画像を設定
+                coverImage = info[.originalImage] as? UIImage
+                
+                addTable.reloadData()
+                
+                //フォトライブラリを閉じる
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                //imageに選んだ画像を設定
+                var addImage: UIImage!
+                
+                addImage = info[.originalImage] as? UIImage
+                
+                //cellNumImageDic[selectedCellNumber + 1] = addImage
+                
+                if selectedCellNumber == 0{
+                    cellNumImage0 = addImage
+                } else if selectedCellNumber == 1 {
+                    cellNumImage1 = addImage
+                } else if selectedCellNumber == 2 {
+                    cellNumImage2 = addImage
+                } else if selectedCellNumber == 3 {
+                    cellNumImage3 = addImage
+                } else if selectedCellNumber == 4 {
+                    cellNumImage4 = addImage
+                }
+                
+                addTable.reloadData()
+                //フォトライブラリを閉じる
+                self.dismiss(animated: true, completion: nil)
+            }
     }
     
     //押されたcellの番号
@@ -309,11 +340,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.present(imagePickerController, animated: true, completion: nil)
         
     }
-    
-    @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     
     //textfieldが編集されるたびに呼ばれる
     func textFieldDidChangeSelection(_ textField: UITextField) {

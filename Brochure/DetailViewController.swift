@@ -22,6 +22,7 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
 
     
     // realmから呼び出すための変数を用意する
+    var detailCoverImage: UIImage?
     var detailWhereText: String?
     var detailDateText: String?
     var detailTenjiText: String?
@@ -36,6 +37,9 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
     var detailWorkText2: String?
     var detailWorkText3: String?
     var detailWorkText4: String?
+    
+    //addviewに渡す文字列
+    var toAddViewText: String = "DetailViewからAddViewへ"
     
     //選択されてきたアイコンの番号を確認するための変数
     var iconNumber: Int = 0
@@ -69,6 +73,7 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
             detailDateText = detailResults?.whenText
             detailTenjiText = detailResults?.whatTenjiText
             detailCommentText = detailResults?.memoText
+            detailCoverImage = UIImage(data: (detailResults?.coverImage)!)
             detailWorkImage0 = UIImage(data: (detailResults?.tenjiImage0)!)
             detailWorkImage1 = UIImage(data: (detailResults?.tenjiImage1)!)
             detailWorkImage2 = UIImage(data: (detailResults?.tenjiImage2)!)
@@ -87,6 +92,8 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
             tenjiLabel.text = detailTenjiText
             commentLabel.text = detailCommentText
         }
+        
+        table.reloadData()
         
         
     }
@@ -127,17 +134,31 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     
     @IBAction func edit() {
-            self.performSegue(withIdentifier: "EditViewController", sender: nil)
+        self.performSegue(withIdentifier: "AddViewController", sender: nil)
+            //self.performSegue(withIdentifier: "EditViewController", sender: nil)
+            
     }
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditViewController" {
-            let nextVC = segue.destination as? EditViewController
-            nextVC?.whereText = self.whereLabel.text
-            nextVC?.dateText = self.dateLabel.text
-            nextVC?.tenjiText = self.tenjiLabel.text
-            nextVC?.commentText = self.commentLabel.text
-            nextVC?.detailNumber = self.iconNumber
+        if segue.identifier == "AddViewController" {
+            let nextVC = segue.destination as? AddViewController
+            nextVC?.whereText = self.detailWhereText ?? ""
+            nextVC?.dateText = self.detailDateText ?? ""
+            nextVC?.tenjiText = self.detailTenjiText ?? ""
+            nextVC?.memoText = self.detailCommentText ?? ""
+            nextVC?.coverImage = self.detailCoverImage!
+            nextVC?.cellNumString0 = self.detailWorkText0 ?? ""
+            nextVC?.cellNumString1 = self.detailWorkText1 ?? ""
+            nextVC?.cellNumString2 = self.detailWorkText2 ?? ""
+            nextVC?.cellNumString3 = self.detailWorkText3 ?? ""
+            nextVC?.cellNumString4 = self.detailWorkText4 ?? ""
+            nextVC?.cellNumImage0 = self.detailWorkImage0!
+            nextVC?.cellNumImage1 = self.detailWorkImage1!
+            nextVC?.cellNumImage2 = self.detailWorkImage2!
+            nextVC?.cellNumImage3 = self.detailWorkImage3!
+            nextVC?.cellNumImage4 = self.detailWorkImage4!
+            nextVC?.judgeText = self.toAddViewText
+            nextVC?.detailToEditNumber = self.iconNumber
         }
     }
     

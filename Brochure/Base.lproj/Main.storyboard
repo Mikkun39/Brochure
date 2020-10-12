@@ -52,7 +52,7 @@
                     <navigationItem key="navigationItem" id="1SB-FE-pxn">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="jMQ-zd-WEv">
                             <connections>
-                                <segue destination="d93-dc-pyY" kind="presentation" id="qF2-On-uoU"/>
+                                <segue destination="d93-dc-pyY" kind="show" id="p77-Js-zAL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -157,6 +157,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="DgM-JJ-npp">
                             <connections>
                                 <action selector="edit" destination="N2V-Dp-XDV" id="SWm-D0-me6"/>
+                                <segue destination="d93-dc-pyY" kind="show" identifier="AddViewController" id="ckD-De-VLx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -166,7 +167,6 @@
                         <outlet property="table" destination="ePQ-8F-XeI" id="Av5-JW-bSb"/>
                         <outlet property="tenjiLabel" destination="OEr-I6-Ze6" id="sXf-nI-OUa"/>
                         <outlet property="whereLabel" destination="QHS-nl-P6h" id="qGF-Nz-dyg"/>
-                        <segue destination="mB9-UV-pHA" kind="show" identifier="EditViewController" id="ZMn-eH-eF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gAC-OF-pTf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -178,11 +178,11 @@
             <objects>
                 <viewController id="d93-dc-pyY" customClass="AddViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LMS-Rb-XMa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-J1-AEt">
-                                <rect key="frame" x="0.0" y="95" width="414" height="621"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -190,28 +190,17 @@
                                     <outlet property="delegate" destination="d93-dc-pyY" id="qcN-D3-34l"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-p4-NGk">
-                                <rect key="frame" x="0.0" y="9" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="p7B-kY-dE8">
-                                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="3jV-Y4-xgb">
-                                            <connections>
-                                                <action selector="back" destination="d93-dc-pyY" id="ZJJ-YR-qGu"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="z5H-Vt-A4E">
-                                            <connections>
-                                                <action selector="save" destination="d93-dc-pyY" id="SWP-h6-eMn"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nRY-OC-jWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3Mm-ek-a6g">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FPj-pH-GFt">
+                            <connections>
+                                <action selector="save" destination="d93-dc-pyY" id="1d2-I1-FAR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addTable" destination="fdA-J1-AEt" id="geN-8t-G4k"/>
                     </connections>
@@ -344,8 +333,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="78.260869565217391"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ckD-De-VLx"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="unnamed" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
