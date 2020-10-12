@@ -44,8 +44,6 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         let realm = try! Realm()
         
         let detailResults = realm.objects(Detail.self).filter("detailId == \(detailNumber)").first
-        
-        let tenjiResults = realm.objects(tenjiSet.self)
     
         if detailResults != nil {
             whereText = detailResults?.whereText
@@ -97,10 +95,18 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func addMemoList() {
-        cellCount += 1
-        editTable.reloadData()
-    }
+    //@IBAction func addMemoList() {
+      //  cellCount += 1
+        //editTable.reloadData()
+    //}
+    
+//    //スワイプしたセルを削除
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//            cellCount -= 1
+//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+//            editTable.reloadData()
+//        }
+}
     /*
     // MARK: - Navigation
 
@@ -111,4 +117,4 @@ class EditViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     */
 
-}
+

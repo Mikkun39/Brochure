@@ -10,6 +10,12 @@
 		41C535295EA9A2EB4D268F54 /* Pods_Brochure_BrochureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A78EF2A02F148A375D5BE28 /* Pods_Brochure_BrochureUITests.framework */; };
 		69E79F4EB93B732EC03908AC /* Pods_BrochureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8338C576DA8566D6EA3C5C78 /* Pods_BrochureTests.framework */; };
 		BD4C51D72528C55200AE8B09 /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4C51D62528C55200AE8B09 /* RealmClass.swift */; };
+		BD4EE4B02531BF2000CC31BD /* AddFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EE4AE2531BF2000CC31BD /* AddFirstTableViewCell.swift */; };
+		BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4AF2531BF2000CC31BD /* AddFirstTableViewCell.xib */; };
+		BD4EE4BB2531C2F800CC31BD /* AddSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EE4B92531C2F800CC31BD /* AddSecondTableViewCell.swift */; };
+		BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */; };
+		BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */; };
+		BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */; };
 		BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */; };
 		BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */; };
 		BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F825259DDE003ADA75 /* ViewController.swift */; };
@@ -51,6 +57,12 @@
 		AA45E3F8D78F60578A306C71 /* Pods-BrochureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrochureTests.debug.xcconfig"; path = "Target Support Files/Pods-BrochureTests/Pods-BrochureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE64BC3EBBCDBA7470E021BF /* Pods-Brochure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brochure.debug.xcconfig"; path = "Target Support Files/Pods-Brochure/Pods-Brochure.debug.xcconfig"; sourceTree = "<group>"; };
 		BD4C51D62528C55200AE8B09 /* RealmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClass.swift; sourceTree = "<group>"; };
+		BD4EE4AE2531BF2000CC31BD /* AddFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstTableViewCell.swift; sourceTree = "<group>"; };
+		BD4EE4AF2531BF2000CC31BD /* AddFirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFirstTableViewCell.xib; sourceTree = "<group>"; };
+		BD4EE4B92531C2F800CC31BD /* AddSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSecondTableViewCell.swift; sourceTree = "<group>"; };
+		BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSecondTableViewCell.xib; sourceTree = "<group>"; };
+		BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThirdTableViewCell.swift; sourceTree = "<group>"; };
+		BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddThirdTableViewCell.xib; sourceTree = "<group>"; };
 		BD9CA8F125259DDE003ADA75 /* Brochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD4EE4B52531BF2D00CC31BD /* AddCustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BD4EE4AE2531BF2000CC31BD /* AddFirstTableViewCell.swift */,
+				BD4EE4AF2531BF2000CC31BD /* AddFirstTableViewCell.xib */,
+				BD4EE4B92531C2F800CC31BD /* AddSecondTableViewCell.swift */,
+				BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */,
+				BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */,
+				BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */,
+			);
+			path = AddCustomTableViewCell;
+			sourceTree = "<group>";
+		};
 		BD9CA8E825259DDE003ADA75 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +149,7 @@
 		BD9CA8F325259DDE003ADA75 /* Brochure */ = {
 			isa = PBXGroup;
 			children = (
+				BD4EE4B52531BF2D00CC31BD /* AddCustomTableViewCell */,
 				BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */,
 				BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */,
 				BD4C51D62528C55200AE8B09 /* RealmClass.swift */,
@@ -289,8 +315,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */,
+				BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */,
 				BD9CA8FE25259DDF003ADA75 /* Assets.xcassets in Resources */,
+				BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */,
 				BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */,
+				BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +449,14 @@
 			files = (
 				BD9CA92D2525A11B003ADA75 /* EditViewController.swift in Sources */,
 				BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */,
+				BD4EE4B02531BF2000CC31BD /* AddFirstTableViewCell.swift in Sources */,
 				BD9CA9322525A130003ADA75 /* AddViewController.swift in Sources */,
 				BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */,
 				BD4C51D72528C55200AE8B09 /* RealmClass.swift in Sources */,
 				BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */,
+				BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */,
 				BD9CA9282525A0FB003ADA75 /* DetailViewController.swift in Sources */,
+				BD4EE4BB2531C2F800CC31BD /* AddSecondTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
