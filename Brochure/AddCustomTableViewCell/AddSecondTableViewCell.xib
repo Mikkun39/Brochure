@@ -17,20 +17,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-DX-4Xa">
-                        <rect key="frame" x="20" y="16" width="175" height="140"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-DX-4Xa">
+                        <rect key="frame" x="30" y="17.666666666666657" width="149" height="137"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-al-EE3">
-                        <rect key="frame" x="215" y="16" width="175" height="140"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-al-EE3">
+                        <rect key="frame" x="199" y="16" width="175" height="140"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="gD6-Wi-xOb"/>
+                            <constraint firstAttribute="height" constant="140" id="pig-27-scl"/>
+                        </constraints>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Kxr-S5-WFn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="LCZ-al-EE3" secondAttribute="bottom" constant="5" id="MHb-PO-lwr"/>
+                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Vmb-ch-8EV"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kkQ-DX-4Xa" secondAttribute="bottom" constant="5" id="ZLE-CN-gc9"/>
+                    <constraint firstItem="LCZ-al-EE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="fc2-QB-cpI"/>
+                    <constraint firstItem="LCZ-al-EE3" firstAttribute="leading" secondItem="kkQ-DX-4Xa" secondAttribute="trailing" constant="20" id="mT5-uB-CEx"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="LCZ-al-EE3" secondAttribute="trailing" constant="20" id="qUK-bn-Brr"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

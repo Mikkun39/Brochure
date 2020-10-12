@@ -28,7 +28,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var judgeText: String = ""
     
     //UIImageを保存する
-    var coverImage: UIImage!
+    var coverImage: UIImage = UIImage.init(systemName: "camera")!
     
     //各データのUIIMageを保存
     var addImageDic =  [UIImage]()
@@ -175,7 +175,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         } else {
             
             //セルの高さを変更
-            addTable.rowHeight = 600
+            addTable.rowHeight = 500
         
             thirdCell.addMemoTextView.delegate = self
             thirdCell.addMemoTextView.tag = 200
@@ -287,12 +287,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             self.present(imagePickerController, animated: true, completion: nil)
         }
         
+        //一度coverImageを格納する変数
+    var selectedCoverImage: UIImage!
         //表紙画像にフォトライブラリから写真を参照する
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
             if picker.title != "addWorkImage"{
                 //imageに選んだ画像を設定
-                coverImage = info[.originalImage] as? UIImage
+                selectedCoverImage = info[.originalImage] as? UIImage
+                coverImage =  selectedCoverImage
                 
                 addTable.reloadData()
                 
