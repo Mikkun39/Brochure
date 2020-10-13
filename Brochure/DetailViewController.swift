@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
+class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, UIGestureRecognizerDelegate{
 
     
     @IBOutlet var table: UITableView!
@@ -53,6 +53,15 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
     var firstCell = DetailFirstTableViewCell()
     var secondCell = DetailSecondTableViewCell()
     var thirdCell = DetailThirdTableViewCell()
+    
+    //押されたセルの番号を確認
+    var detailSelectedCellNumber: Int = 0
+    
+    //画像をタップするための設定(addImage用)
+    let detailImageTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(detailImage(recognizer:)))
+    
+    //選ばれた写真を確認
+    var selectedImage: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +77,8 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
         table.register(UINib(nibName: "DetailThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailThirdTableViewCell")
         
         table.allowsSelection = false
+        
+        detailImageTapGesture.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -153,6 +164,9 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
                 secondCell.detailWorkTextView.text = detailWorkText4
                 secondCell.detailWorkImageView.image = detailWorkImage4
             }
+            //imageを押した時にアクションが呼び出せるように
+            secondCell.detailWorkImageView.isUserInteractionEnabled = true
+            secondCell.detailWorkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(detailImage(recognizer:))))
             //セルの高さを変更
             table.rowHeight = 180
             return secondCell
@@ -194,7 +208,32 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
             nextVC?.cellNumImage4 = self.detailWorkImage4!
             nextVC?.judgeText = self.toAddViewText
             nextVC?.detailToEditNumber = self.iconNumber
+        } else if segue.identifier == "toZoom" {
+            let nextViewController = segue.destination as? ZoomViewController
+            nextViewController?.zoomImage = self.selectedImage!
         }
+    }
+    
+    @objc func detailImage(recognizer: UITapGestureRecognizer) {
+        //押された位置をcellのpathを取得
+        let point = recognizer.location(in: table)
+        let indexPath = table.indexPathForRow(at: point)
+        detailSelectedCellNumber = (indexPath?[1])!
+        
+        if detailSelectedCellNumber == 0 {
+            selectedImage = detailWorkImage0
+        } else if detailSelectedCellNumber == 1 {
+            selectedImage = detailWorkImage1
+        } else if detailSelectedCellNumber == 2 {
+            selectedImage = detailWorkImage2
+        } else if detailSelectedCellNumber == 3 {
+            selectedImage = detailWorkImage3
+        } else if detailSelectedCellNumber == 4 {
+            selectedImage = detailWorkImage4
+        }
+       
+        self.performSegue(withIdentifier: "toZoom", sender: nil)
+    
     }
     
 

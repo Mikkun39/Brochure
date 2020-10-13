@@ -22,6 +22,7 @@
 		BD625A3D25358E310004C2A4 /* DetailSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3B25358E310004C2A4 /* DetailSecondTableViewCell.xib */; };
 		BD625A43253591A20004C2A4 /* DetailThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */; };
 		BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */; };
+		BD625A4925359DF60004C2A4 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A4825359DF60004C2A4 /* ZoomViewController.swift */; };
 		BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */; };
 		BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */; };
 		BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F825259DDE003ADA75 /* ViewController.swift */; };
@@ -75,6 +76,7 @@
 		BD625A3B25358E310004C2A4 /* DetailSecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSecondTableViewCell.xib; sourceTree = "<group>"; };
 		BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailThirdTableViewCell.swift; sourceTree = "<group>"; };
 		BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailThirdTableViewCell.xib; sourceTree = "<group>"; };
+		BD625A4825359DF60004C2A4 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 		BD9CA8F125259DDE003ADA75 /* Brochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				BD9CA8FD25259DDF003ADA75 /* Assets.xcassets */,
 				BD9CA8FF25259DDF003ADA75 /* LaunchScreen.storyboard */,
 				BD9CA90225259DDF003ADA75 /* Info.plist */,
+				BD625A4825359DF60004C2A4 /* ZoomViewController.swift */,
 			);
 			path = Brochure;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				BD9CA9322525A130003ADA75 /* AddViewController.swift in Sources */,
 				BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */,
 				BD4C51D72528C55200AE8B09 /* RealmClass.swift in Sources */,
+				BD625A4925359DF60004C2A4 /* ZoomViewController.swift in Sources */,
 				BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */,
 				BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */,
 				BD9CA9282525A0FB003ADA75 /* DetailViewController.swift in Sources */,
