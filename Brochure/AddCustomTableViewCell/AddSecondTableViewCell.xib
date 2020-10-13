@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-DX-4Xa">
+                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-DX-4Xa">
                         <rect key="frame" x="30" y="17.666666666666657" width="149" height="137"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
@@ -32,6 +32,13 @@
                         <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="写真のメモ欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNH-ji-NHx">
+                        <rect key="frame" x="206" y="23" width="84" height="14"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                        <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kkQ-DX-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Kxr-S5-WFn"/>
@@ -47,12 +54,16 @@
             <connections>
                 <outlet property="addWorkImageView" destination="kkQ-DX-4Xa" id="nD0-1D-HGb"/>
                 <outlet property="addWorkTextView" destination="LCZ-al-EE3" id="szS-5C-5Sg"/>
+                <outlet property="eachMemoLabel" destination="oNH-ji-NHx" id="Dd7-VR-Xvp"/>
             </connections>
             <point key="canvasLocation" x="155.07246376811597" y="59.510869565217398"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="camera.metering.unknown" catalog="system" width="128" height="93"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -16,6 +16,12 @@
 		BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */; };
 		BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */; };
 		BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */; };
+		BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */; };
+		BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */; };
+		BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */; };
+		BD625A3D25358E310004C2A4 /* DetailSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3B25358E310004C2A4 /* DetailSecondTableViewCell.xib */; };
+		BD625A43253591A20004C2A4 /* DetailThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */; };
+		BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */; };
 		BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */; };
 		BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */; };
 		BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F825259DDE003ADA75 /* ViewController.swift */; };
@@ -63,6 +69,12 @@
 		BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSecondTableViewCell.xib; sourceTree = "<group>"; };
 		BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThirdTableViewCell.swift; sourceTree = "<group>"; };
 		BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddThirdTableViewCell.xib; sourceTree = "<group>"; };
+		BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFirstTableViewCell.swift; sourceTree = "<group>"; };
+		BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailFirstTableViewCell.xib; sourceTree = "<group>"; };
+		BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSecondTableViewCell.swift; sourceTree = "<group>"; };
+		BD625A3B25358E310004C2A4 /* DetailSecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailSecondTableViewCell.xib; sourceTree = "<group>"; };
+		BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailThirdTableViewCell.swift; sourceTree = "<group>"; };
+		BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailThirdTableViewCell.xib; sourceTree = "<group>"; };
 		BD9CA8F125259DDE003ADA75 /* Brochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +136,19 @@
 			path = AddCustomTableViewCell;
 			sourceTree = "<group>";
 		};
+		BD625A22253589F20004C2A4 /* DetailCustomTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */,
+				BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */,
+				BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */,
+				BD625A3B25358E310004C2A4 /* DetailSecondTableViewCell.xib */,
+				BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */,
+				BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */,
+			);
+			path = DetailCustomTableViewCell;
+			sourceTree = "<group>";
+		};
 		BD9CA8E825259DDE003ADA75 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +174,7 @@
 		BD9CA8F325259DDE003ADA75 /* Brochure */ = {
 			isa = PBXGroup;
 			children = (
+				BD625A22253589F20004C2A4 /* DetailCustomTableViewCell */,
 				BD4EE4B52531BF2D00CC31BD /* AddCustomTableViewCell */,
 				BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */,
 				BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */,
@@ -314,9 +340,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD625A3D25358E310004C2A4 /* DetailSecondTableViewCell.xib in Resources */,
 				BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */,
 				BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */,
 				BD9CA8FE25259DDF003ADA75 /* Assets.xcassets in Resources */,
+				BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */,
+				BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */,
 				BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */,
 				BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */,
 				BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */,
@@ -447,9 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */,
 				BD9CA92D2525A11B003ADA75 /* EditViewController.swift in Sources */,
 				BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */,
 				BD4EE4B02531BF2000CC31BD /* AddFirstTableViewCell.swift in Sources */,
+				BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */,
+				BD625A43253591A20004C2A4 /* DetailThirdTableViewCell.swift in Sources */,
 				BD9CA9322525A130003ADA75 /* AddViewController.swift in Sources */,
 				BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */,
 				BD4C51D72528C55200AE8B09 /* RealmClass.swift in Sources */,
@@ -635,6 +667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Brochure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -657,6 +690,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Brochure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

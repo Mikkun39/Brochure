@@ -1,23 +1,20 @@
 //
-//  AddSecondTableViewCell.swift
+//  DetailSecondTableViewCell.swift
 //  Brochure
 //
-//  Created by 高山瑞基 on 2020/10/10.
+//  Created by 高山瑞基 on 2020/10/13.
 //
 
 import UIKit
 
-class AddSecondTableViewCell: UITableViewCell, UITextViewDelegate {
+class DetailSecondTableViewCell: UITableViewCell {
     
-    @IBOutlet var addWorkImageView: UIImageView!
-    @IBOutlet var addWorkTextView: UITextView!
-    @IBOutlet var eachMemoLabel: UILabel!
+    @IBOutlet var detailWorkImageView: UIImageView!
+    @IBOutlet var detailWorkTextView: UITextView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        addWorkTextView.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

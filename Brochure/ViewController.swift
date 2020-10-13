@@ -14,6 +14,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet var coverImageView: UIImageView!
     
+    @IBOutlet var tenjiTextLabel: UILabel!
+    
     //データの数を入れるための配列
     var detailList: Results<Detail>!
    
@@ -72,12 +74,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         // Tag番号を使ってImageViewのインスタンス生成
         coverImageView = cell.contentView.viewWithTag(1) as? UIImageView
+        
+        //tag番号を使ってLabelのインスタンス生成
+        tenjiTextLabel = cell.contentView.viewWithTag(2) as? UILabel
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage = detailList[indexPath.row].coverImage
         // UIImageをUIImageViewのimageとして設定
         coverImageView.image = UIImage(data: cellImage! as Data)
         
         coverImageView.contentMode = .scaleToFill
+        
+        //配列の番号で指定された要素の名前をテキストとして表示
+        let cellText = detailList[indexPath.row].whatTenjiText
+        //テキストをラベルに代入
+        tenjiTextLabel.text = cellText
         
         return cell
     }

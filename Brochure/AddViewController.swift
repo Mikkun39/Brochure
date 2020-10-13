@@ -28,7 +28,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var judgeText: String = ""
     
     //UIImageを保存する
-    var coverImage: UIImage = UIImage.init(systemName: "camera")!
+    var coverImage: UIImage = UIImage(named: "unnamed")!
     
     //各データのUIIMageを保存
     var addImageDic =  [UIImage]()
@@ -45,11 +45,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     let addTextTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedTextView(recognizer:)))
     
     //セルの番号ごとにimageを管理
-    var cellNumImage0: UIImage = UIImage.init(systemName: "camera")!
-    var cellNumImage1: UIImage = UIImage.init(systemName: "camera")!
-    var cellNumImage2: UIImage = UIImage.init(systemName: "camera")!
-    var cellNumImage3: UIImage = UIImage.init(systemName: "camera")!
-    var cellNumImage4: UIImage = UIImage.init(systemName: "camera")!
+    var cellNumImage0: UIImage = UIImage(named: "unnamed")!
+    var cellNumImage1: UIImage = UIImage(named: "unnamed")!
+    var cellNumImage2: UIImage = UIImage(named: "unnamed")!
+    var cellNumImage3: UIImage = UIImage(named: "unnamed")!
+    var cellNumImage4: UIImage = UIImage(named: "unnamed")!
     
     //セルの番号とStringを管理
     var cellNumString0: String = ""
@@ -82,6 +82,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         addTable.register(UINib(nibName: "AddSecondTableViewCell", bundle: nil), forCellReuseIdentifier: "AddSecondTableViewCell")
         
         addTable.register(UINib(nibName: "AddThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "AddThirdTableViewCell")
+        
+        addTable.allowsSelection = false
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,19 +101,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("セル選択されている")
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "AddViewCell")
-        
-        // Tag番号を使ってImageViewのインスタンス生成
-        //addWorkImageView = cell!.contentView.viewWithTag(1) as? UIImageView
-        
-        //addWorkTextView = cell!.contentView.viewWithTag(2) as? UITextView
-        
-        //addWorkImageView.isUserInteractionEnabled = true
+   
         firstCell = tableView.dequeueReusableCell(withIdentifier: "AddFirstTableViewCell")! as! AddFirstTableViewCell
         
         secondCell = tableView.dequeueReusableCell(withIdentifier: "AddSecondTableViewCell")! as! AddSecondTableViewCell
@@ -144,24 +135,40 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             if indexPath.row == 0 {
                 secondCell.addWorkImageView.image = cellNumImage0
                 secondCell.addWorkTextView.text = cellNumString0
+                if cellNumString0.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
             } else if indexPath.row == 1 {
                 secondCell.addWorkImageView.image = cellNumImage1
                 secondCell.addWorkTextView.text = cellNumString1
+                if cellNumString1.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
             } else if indexPath.row == 2 {
                 secondCell.addWorkImageView.image = cellNumImage2
                 secondCell.addWorkTextView.text = cellNumString2
+                if cellNumString2.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
             } else if indexPath.row == 3 {
                 secondCell.addWorkImageView.image = cellNumImage3
                 secondCell.addWorkTextView.text = cellNumString3
+                if cellNumString3.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
             } else if indexPath.row == 4 {
                 secondCell.addWorkImageView.image = cellNumImage4
                 secondCell.addWorkTextView.text = cellNumString4
+                if cellNumString4.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
             }
             //imageを押した時にアクションが呼び出せるように
             secondCell.addWorkImageView.isUserInteractionEnabled = true
             secondCell.addWorkImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addWorkImage(recognizer:))))
             
             secondCell.addWorkTextView.tag = 100 + indexPath.row
+            secondCell.eachMemoLabel.tag = 100 +  indexPath.row
             
             //テキストを呼び出した時にアクションを起こす
             secondCell.addWorkTextView.isUserInteractionEnabled = true
@@ -369,14 +376,49 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         print("テキスト")
         if textView.tag == 100 {
             cellNumString0 = textView.text!
+            if secondCell.eachMemoLabel.tag == 100
+            {
+                //メモが書いてあるときはlabelを非表示にする
+                if cellNumString0.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
+            }
         } else if textView.tag == 101 {
             cellNumString1 = textView.text!
+            if secondCell.eachMemoLabel.tag == 101
+            {
+                //メモが書いてあるときはlabelを非表示にする
+                if cellNumString1.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
+            }
         } else if textView.tag == 102 {
             cellNumString2 = textView.text!
+            if secondCell.eachMemoLabel.tag == 102
+            {
+                //メモが書いてあるときはlabelを非表示にする
+                if cellNumString2.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
+            }
         } else if textView.tag == 103 {
             cellNumString3 = textView.text!
+            if secondCell.eachMemoLabel.tag == 103
+            {
+                //メモが書いてあるときはlabelを非表示にする
+                if cellNumString3.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
+            }
         } else if textView.tag == 104 {
             cellNumString4 = textView.text!
+            if secondCell.eachMemoLabel.tag == 104
+            {
+                //メモが書いてあるときはlabelを非表示にする
+                if cellNumString4.count != 0 {
+                    secondCell.eachMemoLabel.isHidden = true
+                }
+            }
         }else if textView.tag == 200 {
             memoText = textView.text!
             //メモが書いてあるときはlabelを非表示にする

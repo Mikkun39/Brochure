@@ -12,15 +12,6 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
 
     
     @IBOutlet var table: UITableView!
-    @IBOutlet var whereLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var tenjiLabel: UILabel!
-    
-    @IBOutlet var workImageView: UIImageView!
-    @IBOutlet var workTextView: UITextView!
-    @IBOutlet var commentLabel: UILabel!
-
-    
     // realmから呼び出すための変数を用意する
     var detailCoverImage: UIImage?
     var detailWhereText: String?
@@ -38,11 +29,30 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
     var detailWorkText3: String?
     var detailWorkText4: String?
     
+    //セルの番号ごとにimageを管理
+    var cellNumImage0: UIImage!
+    var cellNumImage1: UIImage!
+    var cellNumImage2: UIImage!
+    var cellNumImage3: UIImage!
+    var cellNumImage4: UIImage!
+    
+    //セルの番号とStringを管理
+    var cellNumString0: String!
+    var cellNumString1: String!
+    var cellNumString2: String!
+    var cellNumString3: String!
+    var cellNumString4: String!
+    
     //addviewに渡す文字列
     var toAddViewText: String = "DetailViewからAddViewへ"
     
     //選択されてきたアイコンの番号を確認するための変数
     var iconNumber: Int = 0
+    
+    //カスタムセルのインスタンス化
+    var firstCell = DetailFirstTableViewCell()
+    var secondCell = DetailSecondTableViewCell()
+    var thirdCell = DetailThirdTableViewCell()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +60,14 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
         table.dataSource = self
         table.delegate = self
         
-        table.estimatedRowHeight = 66
-        table.rowHeight = UITableView.automaticDimension
+        //作ったカスタムセルを登録する
+        table.register(UINib(nibName: "DetailFirstTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailFirstTableViewCell")
         
-        //labelの文字数に応じてテキストサイズの変更
-        whereLabel.adjustsFontSizeToFitWidth = true
-        dateLabel.adjustsFontSizeToFitWidth = true
-        tenjiLabel.adjustsFontSizeToFitWidth = true
+        table.register(UINib(nibName: "DetailSecondTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailSecondTableViewCell")
+        
+        table.register(UINib(nibName: "DetailThirdTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailThirdTableViewCell")
+        
+        table.allowsSelection = false
         // Do any additional setup after loading the view.
     }
     
@@ -85,12 +96,6 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
             detailWorkText3 = detailResults?.tenjiMemo3
             detailWorkText4 = detailResults?.tenjiMemo4
     
-            
-            
-            whereLabel.text = detailWhereText
-            dateLabel.text = detailDateText
-            tenjiLabel.text = detailTenjiText
-            commentLabel.text = detailCommentText
         }
         
         table.reloadData()
@@ -98,37 +103,67 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DetailViewCell")
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        // Tag番号を使ってImageViewのインスタンス生成
-        workImageView = cell!.contentView.viewWithTag(1) as? UIImageView
-        
-        workTextView = cell!.contentView.viewWithTag(2) as? UITextView
-        
-        if indexPath.row == 0 {
-            workTextView.text = detailWorkText0
-            workImageView.image = detailWorkImage0
-        } else if indexPath.row == 1 {
-            workTextView.text = detailWorkText1
-            workImageView.image = detailWorkImage1
-        } else if indexPath.row == 2 {
-            workTextView.text = detailWorkText2
-            workImageView.image = detailWorkImage2
-        } else if indexPath.row == 3 {
-            workTextView.text = detailWorkText3
-            workImageView.image = detailWorkImage3
-        } else if indexPath.row == 4 {
-            workTextView.text = detailWorkText4
-            workImageView.image = detailWorkImage4
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            return 5
+        } else {
+            return 1
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return cell!
+        firstCell = tableView.dequeueReusableCell(withIdentifier: "DetailFirstTableViewCell")! as! DetailFirstTableViewCell
         
+        secondCell = tableView.dequeueReusableCell(withIdentifier: "DetailSecondTableViewCell")! as! DetailSecondTableViewCell
+        
+        thirdCell = tableView.dequeueReusableCell(withIdentifier: "DetailThirdTableViewCell")! as! DetailThirdTableViewCell
+        
+        if indexPath.section == 0 {
+            firstCell.detailTenjiLabel.text = detailTenjiText
+            firstCell.detailDateLabel.text = detailDateText
+            firstCell.detailWhereLabel.text = detailWhereText
+            
+            //セルの高さを変更
+            table.rowHeight = 200
+            return firstCell
+            
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                secondCell.detailWorkTextView.text = detailWorkText0
+                secondCell.detailWorkImageView.image = detailWorkImage0
+            } else if indexPath.row == 1 {
+                secondCell.detailWorkTextView.text = detailWorkText1
+                secondCell.detailWorkImageView.image = detailWorkImage1
+            } else if indexPath.row == 2 {
+                secondCell.detailWorkTextView.text = detailWorkText2
+                secondCell.detailWorkImageView.image = detailWorkImage2
+            } else if indexPath.row == 3 {
+                secondCell.detailWorkTextView.text = detailWorkText3
+                secondCell.detailWorkImageView.image = detailWorkImage3
+            } else if indexPath.row == 4 {
+                secondCell.detailWorkTextView.text = detailWorkText4
+                secondCell.detailWorkImageView.image = detailWorkImage4
+            }
+            //セルの高さを変更
+            table.rowHeight = 180
+            return secondCell
+            
+        } else {
+            //セルの高さを変更
+            table.rowHeight = 180
+        
+            thirdCell.detailMemoTextView.text = detailCommentText
+            return thirdCell
+        }
     }
     
     
