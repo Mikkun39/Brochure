@@ -61,6 +61,7 @@
                             <constraint firstAttribute="height" constant="34" id="Nx9-0c-BdW"/>
                             <constraint firstAttribute="width" constant="150" id="qkl-9n-2yD"/>
                         </constraints>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     </textField>
