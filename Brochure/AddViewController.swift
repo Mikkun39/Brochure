@@ -131,6 +131,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             //セルの高さを変更
             addTable.rowHeight = 240
             return firstCell
+            
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 secondCell.addWorkImageView.image = cellNumImage0
@@ -178,6 +179,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             
             //セルの高さを変更
             addTable.rowHeight = 180
+            
+            addWorkTextViewDoneHandle()
             return secondCell
         } else {
             
@@ -192,7 +195,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             if memoText.count != 0 {
                 thirdCell.memoLabel.isHidden = true
             }
-            
+            addMemoTextViewDoneHandle()
             return thirdCell
         }
         //return cell!
@@ -280,7 +283,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
         
         //表紙の画像を選択する処理
-        @objc func tapCoverImage(recognizer: UITapGestureRecognizer) {
+    @objc func tapCoverImage(recognizer: UITapGestureRecognizer) {
             
             //UIImagePickerControllerのインスタンスを作る
             let imagePickerController: UIImagePickerController = UIImagePickerController()
@@ -376,22 +379,10 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         print("テキスト")
         if textView.tag == 100 {
             cellNumString0 = textView.text!
-            if secondCell.eachMemoLabel.tag == 100
-            {
-                //メモが書いてあるときはlabelを非表示にする
-                if cellNumString0.count != 0 {
-                    secondCell.eachMemoLabel.isHidden = true
-                }
-            }
+            secondCell.eachMemoLabel.isHidden = true
         } else if textView.tag == 101 {
             cellNumString1 = textView.text!
-            if secondCell.eachMemoLabel.tag == 101
-            {
-                //メモが書いてあるときはlabelを非表示にする
-                if cellNumString1.count != 0 {
-                    secondCell.eachMemoLabel.isHidden = true
-                }
-            }
+            
         } else if textView.tag == 102 {
             cellNumString2 = textView.text!
             if secondCell.eachMemoLabel.tag == 102
@@ -440,12 +431,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         return true
     }
     
-    //リターンを閉じる
-    func textViewShouldReturn(_ textView: UITextView) -> Bool {
-        textView.resignFirstResponder()
-        return true
-    }
-    
     //押されたテキストの位置を把握
     var selectedTextNumber: Int = 0
     
@@ -473,8 +458,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
      */
     
    
-        //addworkTextViewの完了ボタン処理
-        func textViewDoneHandle() {
+    //addworkTextViewの完了ボタン処理
+    func addWorkTextViewDoneHandle() {
             //textViewの入力完了後の完了ボタン設定
             // ツールバー生成
             let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
@@ -485,16 +470,39 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             // 閉じるボタンを右に配置するためのスペース?
             let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
             // 閉じるボタン
-            let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(commitButtonTapped))
+            let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(workCommitButtonTapped))
             // スペース、閉じるボタンを右側に配置
             toolBar.items = [spacer, commitButton]
             // textViewのキーボードにツールバーを設定
             secondCell.addWorkTextView.inputAccessoryView = toolBar
-            thirdCell.addMemoTextView.inputAccessoryView = toolBar
-        }
+    }
     
-    @objc func commitButtonTapped() {
+    @objc func workCommitButtonTapped() {
+        
         self.secondCell.addWorkTextView.endEditing(true)
+    }
+    
+    //addmemoTextViewの完了ボタン処理
+    func addMemoTextViewDoneHandle() {
+            //textViewの入力完了後の完了ボタン設定
+            // ツールバー生成
+            let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
+            // スタイルを設定
+            toolBar.barStyle = UIBarStyle.default
+            // 画面幅に合わせてサイズを変更
+            toolBar.sizeToFit()
+            // 閉じるボタンを右に配置するためのスペース?
+            let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+            // 閉じるボタン
+            let commitButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(memoCommitButtonTapped))
+            // スペース、閉じるボタンを右側に配置
+            toolBar.items = [spacer, commitButton]
+            // textViewのキーボードにツールバーを設定
+            thirdCell.addMemoTextView.inputAccessoryView = toolBar
+    }
+    
+    @objc func memoCommitButtonTapped() {
+        print("memoga押された")
         self.thirdCell.addMemoTextView.endEditing(true)
     }
     
