@@ -506,6 +506,10 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.thirdCell.addMemoTextView.endEditing(true)
     }
     
+    @IBAction func back () {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //            return UITableView.automaticDimension

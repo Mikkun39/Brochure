@@ -236,6 +236,9 @@ class DetailViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     }
     
+    @IBAction func back () {
+        self.navigationController?.popViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

@@ -25,6 +25,7 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
+                <color key="backgroundColor" red="0.87058823529999996" green="0.72156862749999995" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="wqW-yk-JRH" secondAttribute="trailing" constant="20" id="FfG-nd-x0n"/>
                     <constraint firstAttribute="bottom" secondItem="wqW-yk-JRH" secondAttribute="bottom" constant="30" id="YVc-bf-33N"/>

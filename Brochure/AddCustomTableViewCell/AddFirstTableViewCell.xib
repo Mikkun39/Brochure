@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Harenosora.otf">
+            <string>HarenosoraMincho</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,7 +34,7 @@
                             <constraint firstAttribute="height" constant="34" id="Ibw-CT-4R9"/>
                             <constraint firstAttribute="width" constant="80" id="vZ6-NY-CcC"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     </textField>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="展示名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lnV-HZ-fI5">
@@ -39,7 +44,7 @@
                             <constraint firstAttribute="height" constant="34" id="4py-D5-zef"/>
                             <constraint firstAttribute="width" constant="150" id="XeM-Nu-AHP"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvU-hw-iTg">
@@ -56,7 +61,7 @@
                             <constraint firstAttribute="height" constant="34" id="Nx9-0c-BdW"/>
                             <constraint firstAttribute="width" constant="150" id="qkl-9n-2yD"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                     </textField>
                 </subviews>

@@ -58,7 +58,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="1SB-FE-pxn">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="jMQ-zd-WEv">
+                        <barButtonItem key="leftBarButtonItem" image="house.fill" catalog="system" id="bxJ-ql-Ntu">
+                            <color key="tintColor" systemColor="systemGray5Color"/>
+                            <connections>
+                                <action selector="backToCover" destination="BYZ-38-t0r" id="tqN-sg-Fh4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" style="plain" id="jMQ-zd-WEv">
                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <segue destination="d93-dc-pyY" kind="show" id="p77-Js-zAL"/>
@@ -85,14 +91,21 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-EO-FZg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dCw-I2-xEF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="d5O-fd-rEe">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="DgM-JJ-npp">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="TR0-qG-mgY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="back" destination="N2V-Dp-XDV" id="tUy-I3-51v"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="rectangle.and.pencil.and.ellipsis" catalog="system" id="DgM-JJ-npp">
+                            <color key="tintColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <action selector="edit" destination="N2V-Dp-XDV" id="SWm-D0-me6"/>
                                 <segue destination="d93-dc-pyY" kind="show" identifier="AddViewController" id="ckD-De-VLx"/>
@@ -126,7 +139,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ES-8N-hWq"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.5490196078431373" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="bKy-RB-0TG"/>
                 </viewController>
@@ -156,7 +169,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Mm-ek-a6g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="FPj-pH-GFt">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="Dco-w6-qmC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="back" destination="d93-dc-pyY" id="ot1-f4-O3R"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.arrow.down" catalog="system" id="FPj-pH-GFt">
+                            <color key="tintColor" systemColor="systemBackgroundColor"/>
                             <connections>
                                 <action selector="save" destination="d93-dc-pyY" id="1d2-I1-FAR"/>
                             </connections>
@@ -319,7 +339,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ARo-y3-oLP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -335,6 +362,11 @@
         <segue reference="ckD-De-VLx"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="plus.square" catalog="system" width="128" height="114"/>
+        <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
+        <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="unnamed" width="512" height="512"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -16,6 +16,11 @@
 		BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */; };
 		BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */; };
 		BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */; };
+		BD53BCF82539E433008058AE /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53BCF72539E433008058AE /* CoverViewController.swift */; };
+		BD53BD2A2539FFFF008058AE /* Harenosora.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD292539FFFF008058AE /* Harenosora.otf */; };
+		BD53BD2F253A0057008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
+		BD53BD33253A0061008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
+		BD53BD37253A0061008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
 		BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */; };
 		BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */; };
 		BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */; };
@@ -27,7 +32,6 @@
 		BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */; };
 		BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F825259DDE003ADA75 /* ViewController.swift */; };
 		BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9CA8FA25259DDE003ADA75 /* Main.storyboard */; };
-		BD9CA8FE25259DDF003ADA75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9CA8FD25259DDF003ADA75 /* Assets.xcassets */; };
 		BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD9CA8FF25259DDF003ADA75 /* LaunchScreen.storyboard */; };
 		BD9CA90C25259DDF003ADA75 /* BrochureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA90B25259DDF003ADA75 /* BrochureTests.swift */; };
 		BD9CA91725259DDF003ADA75 /* BrochureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA91625259DDF003ADA75 /* BrochureUITests.swift */; };
@@ -70,6 +74,9 @@
 		BD4EE4BA2531C2F800CC31BD /* AddSecondTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddSecondTableViewCell.xib; sourceTree = "<group>"; };
 		BD4EE4C02531C62400CC31BD /* AddThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddThirdTableViewCell.swift; sourceTree = "<group>"; };
 		BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddThirdTableViewCell.xib; sourceTree = "<group>"; };
+		BD53BCF72539E433008058AE /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
+		BD53BD292539FFFF008058AE /* Harenosora.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Harenosora.otf; sourceTree = "<group>"; };
+		BD53BD2E253A0056008058AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFirstTableViewCell.swift; sourceTree = "<group>"; };
 		BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailFirstTableViewCell.xib; sourceTree = "<group>"; };
 		BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,7 +89,6 @@
 		BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BD9CA8F825259DDE003ADA75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD9CA8FB25259DDE003ADA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BD9CA8FD25259DDF003ADA75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD9CA90025259DDF003ADA75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD9CA90225259DDF003ADA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9CA90725259DDF003ADA75 /* BrochureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrochureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,14 @@
 			path = AddCustomTableViewCell;
 			sourceTree = "<group>";
 		};
+		BD53BD092539FCAA008058AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BD53BD292539FFFF008058AE /* Harenosora.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BD625A22253589F20004C2A4 /* DetailCustomTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,20 +190,22 @@
 		BD9CA8F325259DDE003ADA75 /* Brochure */ = {
 			isa = PBXGroup;
 			children = (
+				BD53BD092539FCAA008058AE /* Fonts */,
 				BD625A22253589F20004C2A4 /* DetailCustomTableViewCell */,
 				BD4EE4B52531BF2D00CC31BD /* AddCustomTableViewCell */,
 				BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */,
 				BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */,
 				BD4C51D62528C55200AE8B09 /* RealmClass.swift */,
+				BD53BD2E253A0056008058AE /* Assets.xcassets */,
 				BD9CA8F825259DDE003ADA75 /* ViewController.swift */,
 				BD9CA9272525A0FB003ADA75 /* DetailViewController.swift */,
 				BD9CA92C2525A11B003ADA75 /* EditViewController.swift */,
 				BD9CA9312525A130003ADA75 /* AddViewController.swift */,
 				BD9CA8FA25259DDE003ADA75 /* Main.storyboard */,
-				BD9CA8FD25259DDF003ADA75 /* Assets.xcassets */,
 				BD9CA8FF25259DDF003ADA75 /* LaunchScreen.storyboard */,
 				BD9CA90225259DDF003ADA75 /* Info.plist */,
 				BD625A4825359DF60004C2A4 /* ZoomViewController.swift */,
+				BD53BCF72539E433008058AE /* CoverViewController.swift */,
 			);
 			path = Brochure;
 			sourceTree = "<group>";
@@ -346,12 +362,13 @@
 				BD625A3D25358E310004C2A4 /* DetailSecondTableViewCell.xib in Resources */,
 				BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */,
 				BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */,
-				BD9CA8FE25259DDF003ADA75 /* Assets.xcassets in Resources */,
 				BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */,
+				BD53BD2F253A0057008058AE /* Assets.xcassets in Resources */,
 				BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */,
 				BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */,
 				BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */,
 				BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */,
+				BD53BD2A2539FFFF008058AE /* Harenosora.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD53BD33253A0061008058AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD53BD37253A0061008058AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +510,7 @@
 				BD625A4925359DF60004C2A4 /* ZoomViewController.swift in Sources */,
 				BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */,
 				BD4EE4C22531C62400CC31BD /* AddThirdTableViewCell.swift in Sources */,
+				BD53BCF82539E433008058AE /* CoverViewController.swift in Sources */,
 				BD9CA9282525A0FB003ADA75 /* DetailViewController.swift in Sources */,
 				BD4EE4BB2531C2F800CC31BD /* AddSecondTableViewCell.swift in Sources */,
 			);

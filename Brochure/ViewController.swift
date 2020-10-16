@@ -106,6 +106,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             
         }
     }
+    
+    @IBAction func backToCover (){
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 
