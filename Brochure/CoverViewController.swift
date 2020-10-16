@@ -8,6 +8,30 @@
 import UIKit
 
 class CoverViewController: UIViewController {
+    @IBOutlet var galleryButton: UIButton!
+    @IBOutlet var toAddButton: UIButton!
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //角丸の程度を指定
+        self.galleryButton.layer.cornerRadius = 10.0
+        self.toAddButton.layer.cornerRadius = 10.0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    @IBAction func toGallery () {
+        
+    }
+    
+    @IBAction func toAdd() {
+        
+    }
     
 }

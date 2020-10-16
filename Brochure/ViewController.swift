@@ -25,6 +25,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //選択中のアイコンを入れるための変数
     var selectedIcon: Int = 0
     
+    //追加画面での判定に使うテキスト
+    var addJudgeText: String = "ViewからAddへ"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,12 +106,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if segue.identifier == "toDetailViewController" {
             let nextViewController = segue.destination as? DetailViewController
             nextViewController?.iconNumber = self.selectedIcon
-            
+        } else if segue.identifier == "toAdd" {
+            let nextVC = segue.destination as? AddViewController
+            nextVC?.judgeText = addJudgeText
         }
     }
     
     @IBAction func backToCover (){
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func goToAdd () {
+        self.performSegue(withIdentifier: "toAdd", sender: nil)
     }
 }
 

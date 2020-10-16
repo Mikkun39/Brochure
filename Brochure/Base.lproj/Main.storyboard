@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Y6-rN-ekS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yic-9j-1cO">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -8,11 +8,16 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Harenosora.otf">
+            <string>HarenosoraMincho</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +72,8 @@
                         <barButtonItem key="rightBarButtonItem" image="plus.square" catalog="system" style="plain" id="jMQ-zd-WEv">
                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                             <connections>
-                                <segue destination="d93-dc-pyY" kind="show" id="p77-Js-zAL"/>
+                                <action selector="goToAdd" destination="BYZ-38-t0r" id="RRs-JR-NOG"/>
+                                <segue destination="d93-dc-pyY" kind="show" identifier="toAdd" id="p77-Js-zAL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -121,31 +127,53 @@
             </objects>
             <point key="canvasLocation" x="1862.3188405797102" y="91.304347826086968"/>
         </scene>
-        <!--View Controller-->
+        <!--Cover View Controller-->
         <scene sceneID="ZbE-O4-Z0J">
             <objects>
-                <viewController id="7Y6-rN-ekS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x7q-Qv-hVd" customClass="CoverViewController">
+                <viewController id="7Y6-rN-ekS" customClass="CoverViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x7q-Qv-hVd" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-h6-rrW">
-                                <rect key="frame" x="184" y="353" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-h6-rrW">
+                                <rect key="frame" x="94" y="371" width="227" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.70951924808902445" green="0.52408337961102269" blue="0.32209471656174676" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="32"/>
+                                <state key="normal" title="ギャラリー">
+                                    <color key="titleColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
-                                    <segue destination="Yic-9j-1cO" kind="presentation" modalPresentationStyle="fullScreen" id="7LR-EF-Jif"/>
+                                    <action selector="toGallery" destination="7Y6-rN-ekS" eventType="touchUpInside" id="08q-U2-OyK"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="75x-1d-I0C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-Wl-C3l">
+                                <rect key="frame" x="94" y="551" width="227" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7095192481" green="0.52408337959999995" blue="0.3220947166" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="32"/>
+                                <state key="normal" title="新規追加">
+                                    <color key="titleColor" red="0.094117647060000004" green="0.1058823529" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toAdd" destination="7Y6-rN-ekS" eventType="touchUpInside" id="Jhj-9q-Gab"/>
+                                    <segue destination="d93-dc-pyY" kind="show" id="ADn-PF-6CU"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ES-8N-hWq"/>
-                        <color key="backgroundColor" red="0.5490196078431373" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="bKy-RB-0TG"/>
+                    <connections>
+                        <outlet property="galleryButton" destination="RKU-h6-rrW" id="EI8-EO-YkZ"/>
+                        <outlet property="toAddButton" destination="Ces-Wl-C3l" id="zPS-xU-Lpj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm7-OV-NKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="778"/>
+            <point key="canvasLocation" x="-213" y="78"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="rek-hJ-Whb">
@@ -350,16 +378,16 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ugc-ub-5Dn"/>
+                        <segue destination="7Y6-rN-ekS" kind="relationship" relationship="rootViewController" id="Gha-d5-GC1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzg-kt-Kra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="78.260869565217391"/>
+            <point key="canvasLocation" x="-1013" y="77"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ckD-De-VLx"/>
+        <segue reference="ADn-PF-6CU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>

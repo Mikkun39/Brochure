@@ -18,9 +18,7 @@
 		BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */; };
 		BD53BCF82539E433008058AE /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53BCF72539E433008058AE /* CoverViewController.swift */; };
 		BD53BD2A2539FFFF008058AE /* Harenosora.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD292539FFFF008058AE /* Harenosora.otf */; };
-		BD53BD2F253A0057008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
-		BD53BD33253A0061008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
-		BD53BD37253A0061008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
+		BD53BD4E253A077D008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
 		BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */; };
 		BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */; };
 		BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */; };
@@ -363,7 +361,7 @@
 				BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */,
 				BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */,
 				BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */,
-				BD53BD2F253A0057008058AE /* Assets.xcassets in Resources */,
+				BD53BD4E253A077D008058AE /* Assets.xcassets in Resources */,
 				BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */,
 				BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */,
 				BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */,
@@ -376,7 +374,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD53BD33253A0061008058AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +381,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD53BD37253A0061008058AE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

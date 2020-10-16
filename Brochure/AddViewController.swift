@@ -216,7 +216,8 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     //}
     
     @IBAction func save() {
-        if judgeText == "" {
+        print(judgeText)
+        if judgeText == "ViewからAddへ" {
             // Realmを初期化
             let realm = try! Realm()
             print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -252,9 +253,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             }
 
             self.navigationController?.popViewController(animated: true)
-            }
-        
-        if judgeText == "DetailViewからAddViewへ"{
+        } else if judgeText == "DetailViewからAddViewへ"{
                 // Realmを初期化
                 let realm = try! Realm()
                 
@@ -279,6 +278,43 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                     detailResults?.tenjiMemo4 = cellNumString4
                 }
             self.navigationController?.popViewController(animated: true)
+            
+        } else if judgeText == "" {
+            // Realmを初期化
+            let realm = try! Realm()
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
+            
+            let detail = Detail()
+            
+            // IDに値を設定。タスクのidに1を足して他のIDと重ならない値に
+            if realm.objects(Detail.self).count != 0 {
+                detail.detailId = realm.objects(Detail.self).max(ofProperty: "detailId")! + 1
+            }
+            
+            
+            detail.whereText = whereText
+            detail.whenText = dateText
+            detail.whatTenjiText = tenjiText
+            detail.memoText = memoText
+            detail.coverImage = Data(coverImage.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage0 = Data(cellNumImage0.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage1 = Data(cellNumImage1.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage2 = Data(cellNumImage2.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage3 = Data(cellNumImage3.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiImage4 = Data(cellNumImage4.jpegData(compressionQuality: 0.9)!)
+            detail.tenjiMemo0 = cellNumString0
+            detail.tenjiMemo1 = cellNumString1
+            detail.tenjiMemo2 = cellNumString2
+            detail.tenjiMemo3 = cellNumString3
+            detail.tenjiMemo4 = cellNumString4
+            
+            
+            //STEP.3 Realmに書き込み
+            try! realm.write {
+                realm.add(detail)
+            }
+            self.navigationController?.popViewController(animated: true)
+
         }
     }
         
@@ -363,7 +399,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     //textfieldが編集されるたびに呼ばれる
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        print("呼ばれた")
         if textField.tag == 1 {
             whereText = textField.text!
         } else if textField.tag == 2 {
@@ -376,7 +411,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     //textviewが編集されるたびに呼ばれる
     func textViewDidChange(_ textView: UITextView) {
-        print("テキスト")
         if textView.tag == 100 {
             cellNumString0 = textView.text!
             secondCell.eachMemoLabel.isHidden = true
@@ -507,7 +541,13 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func back () {
-        self.navigationController?.popViewController(animated: true)
+        if judgeText == "ViewからAddへ" {
+            self.navigationController?.popViewController(animated: true)
+        } else if judgeText == "DetailViewからAddViewへ" {
+            self.navigationController?.popViewController(animated: true)
+        } else if judgeText == "" {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
    
