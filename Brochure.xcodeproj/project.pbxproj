@@ -18,7 +18,6 @@
 		BD4EE4C32531C62400CC31BD /* AddThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */; };
 		BD53BCF82539E433008058AE /* CoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD53BCF72539E433008058AE /* CoverViewController.swift */; };
 		BD53BD2A2539FFFF008058AE /* Harenosora.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD292539FFFF008058AE /* Harenosora.otf */; };
-		BD53BD4E253A077D008058AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD53BD2E253A0056008058AE /* Assets.xcassets */; };
 		BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */; };
 		BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */; };
 		BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */; };
@@ -26,6 +25,7 @@
 		BD625A43253591A20004C2A4 /* DetailThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */; };
 		BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */; };
 		BD625A4925359DF60004C2A4 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD625A4825359DF60004C2A4 /* ZoomViewController.swift */; };
+		BD6E48EA253A22E20066B825 /* Assets 2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD6E48E9253A22E20066B825 /* Assets 2.xcassets */; };
 		BD9CA8F525259DDE003ADA75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */; };
 		BD9CA8F725259DDE003ADA75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */; };
 		BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA8F825259DDE003ADA75 /* ViewController.swift */; };
@@ -74,7 +74,6 @@
 		BD4EE4C12531C62400CC31BD /* AddThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddThirdTableViewCell.xib; sourceTree = "<group>"; };
 		BD53BCF72539E433008058AE /* CoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverViewController.swift; sourceTree = "<group>"; };
 		BD53BD292539FFFF008058AE /* Harenosora.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Harenosora.otf; sourceTree = "<group>"; };
-		BD53BD2E253A0056008058AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD625A3325358B8E0004C2A4 /* DetailFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFirstTableViewCell.swift; sourceTree = "<group>"; };
 		BD625A3425358B8E0004C2A4 /* DetailFirstTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailFirstTableViewCell.xib; sourceTree = "<group>"; };
 		BD625A3A25358E310004C2A4 /* DetailSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		BD625A41253591A20004C2A4 /* DetailThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailThirdTableViewCell.swift; sourceTree = "<group>"; };
 		BD625A42253591A20004C2A4 /* DetailThirdTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailThirdTableViewCell.xib; sourceTree = "<group>"; };
 		BD625A4825359DF60004C2A4 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
+		BD6E48E9253A22E20066B825 /* Assets 2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets 2.xcassets"; sourceTree = "<group>"; };
 		BD9CA8F125259DDE003ADA75 /* Brochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,12 +194,12 @@
 				BD9CA8F425259DDE003ADA75 /* AppDelegate.swift */,
 				BD9CA8F625259DDE003ADA75 /* SceneDelegate.swift */,
 				BD4C51D62528C55200AE8B09 /* RealmClass.swift */,
-				BD53BD2E253A0056008058AE /* Assets.xcassets */,
 				BD9CA8F825259DDE003ADA75 /* ViewController.swift */,
 				BD9CA9272525A0FB003ADA75 /* DetailViewController.swift */,
 				BD9CA92C2525A11B003ADA75 /* EditViewController.swift */,
 				BD9CA9312525A130003ADA75 /* AddViewController.swift */,
 				BD9CA8FA25259DDE003ADA75 /* Main.storyboard */,
+				BD6E48E9253A22E20066B825 /* Assets 2.xcassets */,
 				BD9CA8FF25259DDF003ADA75 /* LaunchScreen.storyboard */,
 				BD9CA90225259DDF003ADA75 /* Info.plist */,
 				BD625A4825359DF60004C2A4 /* ZoomViewController.swift */,
@@ -359,9 +359,9 @@
 			files = (
 				BD625A3D25358E310004C2A4 /* DetailSecondTableViewCell.xib in Resources */,
 				BD9CA90125259DDF003ADA75 /* LaunchScreen.storyboard in Resources */,
+				BD6E48EA253A22E20066B825 /* Assets 2.xcassets in Resources */,
 				BD4EE4BC2531C2F800CC31BD /* AddSecondTableViewCell.xib in Resources */,
 				BD625A44253591A20004C2A4 /* DetailThirdTableViewCell.xib in Resources */,
-				BD53BD4E253A077D008058AE /* Assets.xcassets in Resources */,
 				BD625A3625358B8E0004C2A4 /* DetailFirstTableViewCell.xib in Resources */,
 				BD4EE4B12531BF2000CC31BD /* AddFirstTableViewCell.xib in Resources */,
 				BD9CA8FC25259DDE003ADA75 /* Main.storyboard in Resources */,

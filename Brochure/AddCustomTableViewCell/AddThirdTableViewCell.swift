@@ -16,6 +16,8 @@ class AddThirdTableViewCell: UITableViewCell, UITextViewDelegate{
         super.awakeFromNib()
         // Initialization code
         addMemoTextView.delegate = self
+        addMemoTextView.layer.cornerRadius = 15
+        addMemoTextView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

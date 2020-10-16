@@ -413,22 +413,13 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func textViewDidChange(_ textView: UITextView) {
         if textView.tag == 100 {
             cellNumString0 = textView.text!
-            secondCell.eachMemoLabel.isHidden = true
         } else if textView.tag == 101 {
             cellNumString1 = textView.text!
-            
         } else if textView.tag == 102 {
             cellNumString2 = textView.text!
-            if secondCell.eachMemoLabel.tag == 102
-            {
-                //メモが書いてあるときはlabelを非表示にする
-                if cellNumString2.count != 0 {
-                    secondCell.eachMemoLabel.isHidden = true
-                }
-            }
         } else if textView.tag == 103 {
             cellNumString3 = textView.text!
-            if secondCell.eachMemoLabel.tag == 103
+            if selectedCellNumber == 103
             {
                 //メモが書いてあるときはlabelを非表示にする
                 if cellNumString3.count != 0 {
@@ -437,7 +428,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             }
         } else if textView.tag == 104 {
             cellNumString4 = textView.text!
-            if secondCell.eachMemoLabel.tag == 104
+            if selectedCellNumber == 104
             {
                 //メモが書いてあるときはlabelを非表示にする
                 if cellNumString4.count != 0 {
@@ -473,8 +464,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         let tapPoint = recognizer.location(in: addTable)
         let tapIndexPath = addTable.indexPathForRow(at: tapPoint)
         selectedTextNumber = (tapIndexPath?[1])!
-        print(selectedTextNumber)
-        
     }
     //スワイプされたセル番号を取得
     var swipedNumber: Int = 0
@@ -512,7 +501,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @objc func workCommitButtonTapped() {
-        
         self.secondCell.addWorkTextView.endEditing(true)
     }
     
@@ -536,7 +524,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @objc func memoCommitButtonTapped() {
-        print("memoga押された")
         self.thirdCell.addMemoTextView.endEditing(true)
     }
     

@@ -15,6 +15,8 @@ class DetailSecondTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        detailWorkTextView.layer.cornerRadius = 5
+        detailWorkTextView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

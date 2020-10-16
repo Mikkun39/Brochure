@@ -19,6 +19,16 @@ class DetailFirstTableViewCell: UITableViewCell {
         detailDateLabel.adjustsFontSizeToFitWidth = true
         detailWhereLabel.adjustsFontSizeToFitWidth = true
         // Initialization code
+        
+        detailTenjiLabel.layer.cornerRadius = 12
+        detailTenjiLabel.clipsToBounds = true
+        
+        detailDateLabel.layer.cornerRadius = 6
+        detailDateLabel.clipsToBounds = true
+        
+        detailWhereLabel.layer.cornerRadius = 8
+        detailWhereLabel.clipsToBounds = true
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

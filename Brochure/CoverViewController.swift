@@ -10,6 +10,7 @@ import UIKit
 class CoverViewController: UIViewController {
     @IBOutlet var galleryButton: UIButton!
     @IBOutlet var toAddButton: UIButton!
+    @IBOutlet var iconimageView: UIImageView!
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

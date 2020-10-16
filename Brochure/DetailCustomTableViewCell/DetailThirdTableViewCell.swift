@@ -14,6 +14,8 @@ class DetailThirdTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        detailMemoTextView.layer.cornerRadius = 15
+        detailMemoTextView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

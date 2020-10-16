@@ -18,6 +18,8 @@ class AddSecondTableViewCell: UITableViewCell, UITextViewDelegate {
         // Initialization code
         
         addWorkTextView.delegate = self
+        addWorkTextView.layer.cornerRadius = 5
+        addWorkTextView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

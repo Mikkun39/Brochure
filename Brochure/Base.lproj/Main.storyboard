@@ -161,6 +161,10 @@
                                     <segue destination="d93-dc-pyY" kind="show" id="ADn-PF-6CU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="仮アイコン" translatesAutoresizingMaskIntoConstraints="NO" id="MUu-eR-LhS">
+                                <rect key="frame" x="49" y="44" width="316" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ES-8N-hWq"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -168,12 +172,13 @@
                     <navigationItem key="navigationItem" id="bKy-RB-0TG"/>
                     <connections>
                         <outlet property="galleryButton" destination="RKU-h6-rrW" id="EI8-EO-YkZ"/>
+                        <outlet property="iconimageView" destination="MUu-eR-LhS" id="VRR-Xe-sbN"/>
                         <outlet property="toAddButton" destination="Ces-Wl-C3l" id="zPS-xU-Lpj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lm7-OV-NKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-213" y="78"/>
+            <point key="canvasLocation" x="-213.04347826086959" y="77.445652173913047"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="rek-hJ-Whb">
@@ -186,7 +191,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-J1-AEt">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.75294117650000003" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="dataSource" destination="d93-dc-pyY" id="EmT-0H-jMf"/>
                                     <outlet property="delegate" destination="d93-dc-pyY" id="qcN-D3-34l"/>
@@ -396,6 +401,7 @@
         <image name="rectangle.and.pencil.and.ellipsis" catalog="system" width="128" height="81"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="unnamed" width="512" height="512"/>
+        <image name="仮アイコン" width="6707" height="6708"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
