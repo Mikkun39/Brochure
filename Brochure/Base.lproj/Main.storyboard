@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Gallery-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1SB-FE-pxn">
+                    <navigationItem key="navigationItem" title="Gallery" id="1SB-FE-pxn">
                         <barButtonItem key="leftBarButtonItem" image="house.fill" catalog="system" id="bxJ-ql-Ntu">
                             <color key="tintColor" systemColor="systemGray5Color"/>
                             <connections>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="1044.9275362318842" y="78.260869565217391"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="s1e-hT-7Ux">
             <objects>
                 <viewController id="N2V-Dp-XDV" customClass="DetailViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                         <viewLayoutGuide key="safeArea" id="dCw-I2-xEF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d5O-fd-rEe">
+                    <navigationItem key="navigationItem" title="Detail" id="d5O-fd-rEe">
                         <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="TR0-qG-mgY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -197,7 +197,7 @@
             </objects>
             <point key="canvasLocation" x="-213.04347826086959" y="77.445652173913047"/>
         </scene>
-        <!--Add View Controller-->
+        <!--Edit-->
         <scene sceneID="rek-hJ-Whb">
             <objects>
                 <viewController id="d93-dc-pyY" customClass="AddViewController" customModule="Brochure" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,7 +218,7 @@
                         <viewLayoutGuide key="safeArea" id="nRY-OC-jWc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Mm-ek-a6g">
+                    <navigationItem key="navigationItem" title="Edit" id="3Mm-ek-a6g">
                         <barButtonItem key="leftBarButtonItem" image="arrow.backward" catalog="system" id="Dco-w6-qmC">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -287,9 +287,11 @@
                         <color key="tintColor" systemColor="labelColor"/>
                         <color key="barTintColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="24"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                             <color key="textColor" systemColor="labelColor"/>
                         </textAttributes>
                     </navigationBar>
@@ -304,7 +306,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p77-Js-zAL"/>
+        <segue reference="ckD-De-VLx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
