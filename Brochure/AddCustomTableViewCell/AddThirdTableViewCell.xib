@@ -53,7 +53,7 @@
                 <outlet property="addMemoTextView" destination="1mC-hg-ok8" id="o8S-Nf-Mr4"/>
                 <outlet property="memoLabel" destination="yc1-mS-S2S" id="eHj-WT-ztu"/>
             </connections>
-            <point key="canvasLocation" x="211.59420289855075" y="291.84782608695656"/>
+            <point key="canvasLocation" x="87" y="293"/>
         </tableViewCell>
     </objects>
     <resources>

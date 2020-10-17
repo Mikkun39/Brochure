@@ -96,8 +96,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-EO-FZg">
                                 <rect key="frame" x="0.0" y="44" width="414" height="692"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.73725490199999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dCw-I2-xEF"/>
@@ -135,9 +135,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-h6-rrW">
-                                <rect key="frame" x="94" y="371" width="227" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-h6-rrW">
+                                <rect key="frame" x="94" y="371" width="226" height="111"/>
                                 <color key="backgroundColor" red="0.70951924808902445" green="0.52408337961102269" blue="0.32209471656174676" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="32"/>
                                 <state key="normal" title="ギャラリー">
@@ -148,10 +147,12 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="75x-1d-I0C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-Wl-C3l">
-                                <rect key="frame" x="94" y="551" width="227" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ces-Wl-C3l">
+                                <rect key="frame" x="94" y="551" width="226" height="111"/>
                                 <color key="backgroundColor" red="0.7095192481" green="0.52408337959999995" blue="0.3220947166" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="MrG-mC-rx8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="32"/>
                                 <state key="normal" title="新規追加">
                                     <color key="titleColor" red="0.094117647060000004" green="0.1058823529" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,13 +162,29 @@
                                     <segue destination="d93-dc-pyY" kind="show" id="ADn-PF-6CU"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="仮アイコン" translatesAutoresizingMaskIntoConstraints="NO" id="MUu-eR-LhS">
-                                <rect key="frame" x="49" y="44" width="316" height="298"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="仮アイコン" translatesAutoresizingMaskIntoConstraints="NO" id="MUu-eR-LhS">
+                                <rect key="frame" x="20" y="44" width="374" height="298"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="hxm-NH-geh"/>
+                                    <constraint firstAttribute="height" constant="298" id="yVE-85-zpG"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ES-8N-hWq"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Ces-Wl-C3l" firstAttribute="top" secondItem="RKU-h6-rrW" secondAttribute="bottom" constant="69" id="BzN-ni-qKm"/>
+                            <constraint firstItem="Ces-Wl-C3l" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="F0J-dy-kcX"/>
+                            <constraint firstItem="RKU-h6-rrW" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="GDF-4d-YRa"/>
+                            <constraint firstItem="RKU-h6-rrW" firstAttribute="top" secondItem="MUu-eR-LhS" secondAttribute="bottom" constant="29" id="Jpl-N5-flx"/>
+                            <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="Ces-Wl-C3l" secondAttribute="centerX" id="POa-zw-JPM"/>
+                            <constraint firstItem="Ces-Wl-C3l" firstAttribute="leading" secondItem="RKU-h6-rrW" secondAttribute="leading" id="T9N-nT-Abu"/>
+                            <constraint firstItem="3ES-8N-hWq" firstAttribute="bottom" secondItem="Ces-Wl-C3l" secondAttribute="bottom" constant="74" id="V5c-cr-0aZ"/>
+                            <constraint firstItem="MUu-eR-LhS" firstAttribute="top" secondItem="3ES-8N-hWq" secondAttribute="top" id="cJS-9A-fXa"/>
+                            <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="RKU-h6-rrW" secondAttribute="centerX" id="pHJ-h7-T1Q"/>
+                            <constraint firstItem="Ces-Wl-C3l" firstAttribute="leading" secondItem="3ES-8N-hWq" secondAttribute="leading" constant="94" id="rgx-5h-8go"/>
+                            <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="wXx-Nf-ENM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bKy-RB-0TG"/>
                     <connections>
@@ -392,7 +409,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ADn-PF-6CU"/>
+        <segue reference="ckD-De-VLx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>

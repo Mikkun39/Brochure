@@ -22,20 +22,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ8-Id-J0l">
-                        <rect key="frame" x="15" y="89" width="252" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ8-Id-J0l">
+                        <rect key="frame" x="15" y="89" width="244" height="35"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="gUw-ed-spN"/>
                             <constraint firstAttribute="height" constant="35" id="qAq-gx-z7Q"/>
-                            <constraint firstAttribute="width" constant="252" id="xeh-gZ-fU0"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tc6-ti-qTv">
-                        <rect key="frame" x="328" y="89" width="71" height="35"/>
+                        <rect key="frame" x="309" y="89" width="90" height="35"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="9Vv-5z-gde"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="14"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -58,8 +61,8 @@
                     <constraint firstItem="nx4-ls-2eB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="72" id="6Pc-kD-G1p"/>
                     <constraint firstAttribute="bottomMargin" secondItem="NJ8-Id-J0l" secondAttribute="bottom" constant="24" id="8LT-8r-uC7"/>
                     <constraint firstItem="NJ8-Id-J0l" firstAttribute="top" secondItem="nx4-ls-2eB" secondAttribute="bottom" constant="29" id="BV4-LB-KMe"/>
+                    <constraint firstItem="tc6-ti-qTv" firstAttribute="leading" secondItem="NJ8-Id-J0l" secondAttribute="trailing" constant="50" id="MFG-Rq-mew"/>
                     <constraint firstItem="NJ8-Id-J0l" firstAttribute="leading" secondItem="nx4-ls-2eB" secondAttribute="leading" constant="-57" id="YFk-6R-c8g"/>
-                    <constraint firstItem="tc6-ti-qTv" firstAttribute="leading" secondItem="NJ8-Id-J0l" secondAttribute="trailing" constant="61" id="bNO-1T-HNY"/>
                     <constraint firstItem="nx4-ls-2eB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="iGG-4a-jiG"/>
                     <constraint firstAttribute="trailing" secondItem="tc6-ti-qTv" secondAttribute="trailing" constant="15" id="kom-Lf-kwv"/>
                     <constraint firstItem="NJ8-Id-J0l" firstAttribute="bottom" secondItem="tc6-ti-qTv" secondAttribute="bottom" id="sXZ-Jo-hlB"/>

@@ -74,7 +74,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath)
         // 表示するセルを登録(先程命名した"Cell")
         //cellのimageを変更
-        
         // Tag番号を使ってImageViewのインスタンス生成
         coverImageView = cell.contentView.viewWithTag(1) as? UIImageView
         

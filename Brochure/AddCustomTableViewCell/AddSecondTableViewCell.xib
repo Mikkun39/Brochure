@@ -50,10 +50,10 @@
                     <constraint firstItem="kkQ-DX-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Kxr-S5-WFn"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LCZ-al-EE3" secondAttribute="bottom" constant="5" id="MHb-PO-lwr"/>
                     <constraint firstItem="kkQ-DX-4Xa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Vmb-ch-8EV"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="kkQ-DX-4Xa" secondAttribute="bottom" constant="5" id="ZLE-CN-gc9"/>
                     <constraint firstItem="LCZ-al-EE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="fc2-QB-cpI"/>
                     <constraint firstItem="LCZ-al-EE3" firstAttribute="leading" secondItem="kkQ-DX-4Xa" secondAttribute="trailing" constant="20" id="mT5-uB-CEx"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LCZ-al-EE3" secondAttribute="trailing" constant="20" id="qUK-bn-Brr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="kkQ-DX-4Xa" secondAttribute="bottom" constant="5" id="vfm-17-B7Y"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
