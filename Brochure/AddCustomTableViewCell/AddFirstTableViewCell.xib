@@ -32,7 +32,6 @@
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="34" id="Ibw-CT-4R9"/>
-                            <constraint firstAttribute="width" constant="80" id="vZ6-NY-CcC"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -42,7 +41,6 @@
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="34" id="4py-D5-zef"/>
-                            <constraint firstAttribute="width" constant="150" id="XeM-Nu-AHP"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -68,16 +66,18 @@
                 </subviews>
                 <color key="backgroundColor" red="0.73333333333333328" green="0.75294117647058822" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 <constraints>
-                    <constraint firstItem="rge-ta-pWN" firstAttribute="top" secondItem="W9D-bQ-XlL" secondAttribute="bottom" constant="-91" id="8RV-WY-vm7"/>
+                    <constraint firstItem="oje-Fi-Qv6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="4j5-dh-HOT"/>
                     <constraint firstAttribute="bottom" secondItem="oje-Fi-Qv6" secondAttribute="bottom" constant="75" id="AA4-vw-GXv"/>
-                    <constraint firstItem="oje-Fi-Qv6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="Gz1-mg-Mgv"/>
                     <constraint firstItem="W9D-bQ-XlL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="133" id="L25-AW-4ei"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rge-ta-pWN" secondAttribute="trailing" constant="90" id="Rtx-aE-4vj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="W9D-bQ-XlL" secondAttribute="trailing" constant="20" id="TrC-cf-gz7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="lnV-HZ-fI5" secondAttribute="trailing" constant="20" id="VMU-C3-fst"/>
-                    <constraint firstItem="oje-Fi-Qv6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Xwg-7C-BaX"/>
                     <constraint firstItem="lnV-HZ-fI5" firstAttribute="top" secondItem="rge-ta-pWN" secondAttribute="bottom" constant="-90" id="b1M-0w-n9Z"/>
+                    <constraint firstItem="rge-ta-pWN" firstAttribute="leading" secondItem="oje-Fi-Qv6" secondAttribute="trailing" constant="30" id="cuq-qc-sgt"/>
+                    <constraint firstItem="lnV-HZ-fI5" firstAttribute="top" secondItem="oje-Fi-Qv6" secondAttribute="top" id="ikY-Uh-vQ2"/>
                     <constraint firstItem="W9D-bQ-XlL" firstAttribute="leading" secondItem="oje-Fi-Qv6" secondAttribute="trailing" constant="30" id="nx2-U7-xvf"/>
+                    <constraint firstItem="oje-Fi-Qv6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="31" id="ub9-zM-OPu"/>
+                    <constraint firstItem="lnV-HZ-fI5" firstAttribute="leading" secondItem="oje-Fi-Qv6" secondAttribute="trailing" constant="30" id="vyx-kE-O8v"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

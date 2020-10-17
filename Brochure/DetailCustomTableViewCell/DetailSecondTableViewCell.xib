@@ -25,16 +25,10 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-7s-vto">
                         <rect key="frame" x="30" y="16" width="150" height="129.5"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="JYf-qQ-JOh"/>
-                        </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8on-C5-1A2">
                         <rect key="frame" x="213" y="15" width="181" height="132"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="nVI-ez-0YO"/>
-                        </constraints>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -45,9 +39,11 @@
                     <constraint firstItem="cgT-7s-vto" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5qu-vz-gXJ"/>
                     <constraint firstItem="8on-C5-1A2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="6jN-YV-ZD1"/>
                     <constraint firstItem="cgT-7s-vto" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Qpz-F6-QPs"/>
+                    <constraint firstItem="8on-C5-1A2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="213" id="bya-aB-1d9"/>
                     <constraint firstAttribute="bottom" secondItem="8on-C5-1A2" secondAttribute="bottom" constant="15" id="fL0-4X-YeF"/>
                     <constraint firstAttribute="trailing" secondItem="8on-C5-1A2" secondAttribute="trailing" constant="20" id="fy3-NU-5hg"/>
                     <constraint firstItem="8on-C5-1A2" firstAttribute="leading" secondItem="cgT-7s-vto" secondAttribute="trailing" constant="33" id="gzw-6c-xGv"/>
+                    <constraint firstItem="8on-C5-1A2" firstAttribute="top" secondItem="cgT-7s-vto" secondAttribute="bottom" constant="-132" id="o0Y-p7-BLh"/>
                     <constraint firstAttribute="bottom" secondItem="cgT-7s-vto" secondAttribute="bottom" constant="15" id="qiK-wj-5Li"/>
                 </constraints>
             </tableViewCellContentView>

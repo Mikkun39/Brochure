@@ -25,21 +25,19 @@
                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.metering.unknown" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kkQ-DX-4Xa">
                         <rect key="frame" x="30" y="17.666666666666657" width="149" height="137"/>
                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="kkQ-DX-4Xa" secondAttribute="height" multiplier="149:140" id="dQ6-l0-kY8"/>
+                        </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCZ-al-EE3">
                         <rect key="frame" x="199" y="16" width="175" height="140"/>
                         <color key="backgroundColor" systemColor="systemGray4Color"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="175" id="gD6-Wi-xOb"/>
-                            <constraint firstAttribute="height" constant="140" id="pig-27-scl"/>
-                        </constraints>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="写真のメモ欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNH-ji-NHx">
-                        <rect key="frame" x="206" y="23" width="84" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="写真のメモ欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNH-ji-NHx">
+                        <rect key="frame" x="206" y="16" width="84" height="21"/>
                         <fontDescription key="fontDescription" name="HarenosoraMincho" family="HarenosoraMincho" pointSize="14"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
@@ -47,13 +45,19 @@
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                 <constraints>
-                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="Kxr-S5-WFn"/>
+                    <constraint firstAttribute="trailing" secondItem="LCZ-al-EE3" secondAttribute="trailing" constant="40" id="LDv-FJ-TVK"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LCZ-al-EE3" secondAttribute="bottom" constant="5" id="MHb-PO-lwr"/>
-                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Vmb-ch-8EV"/>
+                    <constraint firstItem="LCZ-al-EE3" firstAttribute="top" secondItem="oNH-ji-NHx" secondAttribute="bottom" constant="-21" id="Qgs-7x-DzX"/>
+                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="YHb-Sl-NVh"/>
+                    <constraint firstItem="kkQ-DX-4Xa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15.999999999999993" id="ZR3-qq-LyE"/>
+                    <constraint firstAttribute="bottom" secondItem="LCZ-al-EE3" secondAttribute="bottom" constant="16" id="e2p-UK-7jG"/>
                     <constraint firstItem="LCZ-al-EE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="fc2-QB-cpI"/>
+                    <constraint firstItem="oNH-ji-NHx" firstAttribute="top" secondItem="LCZ-al-EE3" secondAttribute="top" id="i9j-yM-gM0"/>
                     <constraint firstItem="LCZ-al-EE3" firstAttribute="leading" secondItem="kkQ-DX-4Xa" secondAttribute="trailing" constant="20" id="mT5-uB-CEx"/>
+                    <constraint firstAttribute="bottom" secondItem="kkQ-DX-4Xa" secondAttribute="bottom" constant="16" id="oWW-G9-m8E"/>
+                    <constraint firstItem="LCZ-al-EE3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="qEM-mi-MaW"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LCZ-al-EE3" secondAttribute="trailing" constant="20" id="qUK-bn-Brr"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="kkQ-DX-4Xa" secondAttribute="bottom" constant="5" id="vfm-17-B7Y"/>
+                    <constraint firstItem="LCZ-al-EE3" firstAttribute="leading" secondItem="oNH-ji-NHx" secondAttribute="trailing" constant="-91" id="yYl-jx-JOE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

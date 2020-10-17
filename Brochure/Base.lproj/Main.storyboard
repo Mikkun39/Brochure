@@ -173,14 +173,19 @@
                         <viewLayoutGuide key="safeArea" id="3ES-8N-hWq"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.10588235294117647" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="RKU-h6-rrW" firstAttribute="top" secondItem="3ES-8N-hWq" secondAttribute="top" constant="327" id="0jz-b8-0N4"/>
                             <constraint firstItem="Ces-Wl-C3l" firstAttribute="top" secondItem="RKU-h6-rrW" secondAttribute="bottom" constant="69" id="BzN-ni-qKm"/>
                             <constraint firstItem="Ces-Wl-C3l" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="F0J-dy-kcX"/>
                             <constraint firstItem="RKU-h6-rrW" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="GDF-4d-YRa"/>
                             <constraint firstItem="RKU-h6-rrW" firstAttribute="top" secondItem="MUu-eR-LhS" secondAttribute="bottom" constant="29" id="Jpl-N5-flx"/>
+                            <constraint firstItem="RKU-h6-rrW" firstAttribute="leading" secondItem="3ES-8N-hWq" secondAttribute="leading" constant="94" id="Lgf-8d-bft"/>
                             <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="Ces-Wl-C3l" secondAttribute="centerX" id="POa-zw-JPM"/>
                             <constraint firstItem="Ces-Wl-C3l" firstAttribute="leading" secondItem="RKU-h6-rrW" secondAttribute="leading" id="T9N-nT-Abu"/>
                             <constraint firstItem="3ES-8N-hWq" firstAttribute="bottom" secondItem="Ces-Wl-C3l" secondAttribute="bottom" constant="74" id="V5c-cr-0aZ"/>
+                            <constraint firstItem="3ES-8N-hWq" firstAttribute="trailing" secondItem="RKU-h6-rrW" secondAttribute="trailing" constant="94" id="YmU-f3-zsn"/>
+                            <constraint firstItem="3ES-8N-hWq" firstAttribute="bottom" secondItem="RKU-h6-rrW" secondAttribute="bottom" constant="254" id="YpQ-JE-7V6"/>
                             <constraint firstItem="MUu-eR-LhS" firstAttribute="top" secondItem="3ES-8N-hWq" secondAttribute="top" id="cJS-9A-fXa"/>
+                            <constraint firstItem="RKU-h6-rrW" firstAttribute="centerX" secondItem="3ES-8N-hWq" secondAttribute="centerX" id="d1j-eg-T5h"/>
                             <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="RKU-h6-rrW" secondAttribute="centerX" id="pHJ-h7-T1Q"/>
                             <constraint firstItem="Ces-Wl-C3l" firstAttribute="leading" secondItem="3ES-8N-hWq" secondAttribute="leading" constant="94" id="rgx-5h-8go"/>
                             <constraint firstItem="MUu-eR-LhS" firstAttribute="centerX" secondItem="x7q-Qv-hVd" secondAttribute="centerX" id="wXx-Nf-ENM"/>
@@ -248,9 +253,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-1h-Gfx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-1h-Gfx">
+                                <rect key="frame" x="0.0" y="87" width="414" height="649"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt0-Wb-oDU">
@@ -266,7 +271,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KjQ-qP-7lp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="zoomImageView" destination="0gb-1h-Gfx" id="CCc-h5-FWu"/>
@@ -306,7 +311,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ckD-De-VLx"/>
+        <segue reference="ADn-PF-6CU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
