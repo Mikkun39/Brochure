@@ -16,6 +16,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet var tenjiTextLabel: UILabel!
     
+//    @IBOutlet var deleteButton: UIButton!
+    
     //データの数を入れるための配列
     var detailList: Results<Detail>!
    
@@ -24,6 +26,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     //選択中のアイコンを入れるための変数
     var selectedIcon: Int = 0
+    
+    //選択中のアイコンを入れる変数2
+    var tappedIcon: Int = 0
     
     //追加画面での判定に使うテキスト
     var addJudgeText: String = "ViewからAddへ"
@@ -39,13 +44,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // レイアウト設定
         let layout = UICollectionViewFlowLayout()
         //セルのサイズ
-        layout.itemSize = CGSize(width: 100, height: 140)
+        layout.itemSize = CGSize(width: 120, height: 180)
         //セル同士の間隔
-        layout.minimumInteritemSpacing = 12
+        layout.minimumInteritemSpacing = 20
         //セル同士の行間
         layout.minimumLineSpacing = 48
         //セル全体の余白
-        layout.sectionInset = UIEdgeInsets(top: 48, left: 60, bottom: 24, right: 60)
+        layout.sectionInset = UIEdgeInsets(top: 48, left: 50, bottom: 24, right: 50)
         collection.collectionViewLayout = layout
 
     }
@@ -79,24 +84,31 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         //tag番号を使ってLabelのインスタンス生成
         tenjiTextLabel = cell.contentView.viewWithTag(2) as? UILabel
+        
+//        //tag番号を使ってボタンのインスタンス生成
+//        deleteButton = cell.contentView.viewWithTag(3) as? UIButton
+//
+//
+//        //addtargetを追加
+//        deleteButton?.addTarget(self, action: #selector(self.buttonEvent(_: )), for: UIControl.Event.touchUpInside)
+//
+//        deleteButton?.tag = indexPath.row
+//
         // 画像配列の番号で指定された要素の名前の画像をUIImageとする
         let cellImage = detailList[indexPath.row].coverImage
         // UIImageをUIImageViewのimageとして設定
         coverImageView.image = UIImage(data: cellImage! as Data)
+
+        
         
         coverImageView.contentMode = .scaleToFill
         
-        //配列の番号で指定された要素の名前をテキストとして表示
-        let cellText = detailList[indexPath.row].whatTenjiText
-        //テキストをラベルに代入
-        tenjiTextLabel.text = cellText
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedIcon = Int(indexPath.row)
-        print(selectedIcon)
         performSegue(withIdentifier: "toDetailViewController", sender: nil)
 
     }
@@ -118,6 +130,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBAction func goToAdd () {
         self.performSegue(withIdentifier: "toAdd", sender: nil)
     }
+    
+//    @objc func buttonEvent(_ sender: UIButton) {
+//        tappedIcon = deleteButton.tag
+//        print(tappedIcon)
+//        // (1)Realmインスタンスの生成
+//        let realm = try! Realm()
+//        // (2)クエリによるデータの取得
+//        let viewResults = realm.objects(Detail.self).filter("detailId == \(tappedIcon)")
+//        // (3)データの削除
+//        try! realm.write {
+//            realm.delete(viewResults)
+//        }
+//        detailList = realm.objects(Detail.self)
+//        collection.reloadData()
+//    }
+//
+//    //セルの削除許可を設定
+//    func collectionView(_ tableView: UICollectionView,canEditItemAt indexPath: IndexPath) -> Bool{
+//           return true
+//    }
+    
+ 
 }
 
 

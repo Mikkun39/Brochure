@@ -34,7 +34,6 @@
 		BD9CA90C25259DDF003ADA75 /* BrochureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA90B25259DDF003ADA75 /* BrochureTests.swift */; };
 		BD9CA91725259DDF003ADA75 /* BrochureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA91625259DDF003ADA75 /* BrochureUITests.swift */; };
 		BD9CA9282525A0FB003ADA75 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA9272525A0FB003ADA75 /* DetailViewController.swift */; };
-		BD9CA92D2525A11B003ADA75 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA92C2525A11B003ADA75 /* EditViewController.swift */; };
 		BD9CA9322525A130003ADA75 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9CA9312525A130003ADA75 /* AddViewController.swift */; };
 		E1024CFEBEC4395D805AD56A /* Pods_Brochure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A8073B9879C9CA4D508FEBB /* Pods_Brochure.framework */; };
 /* End PBXBuildFile section */
@@ -96,7 +95,6 @@
 		BD9CA91625259DDF003ADA75 /* BrochureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrochureUITests.swift; sourceTree = "<group>"; };
 		BD9CA91825259DDF003ADA75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD9CA9272525A0FB003ADA75 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		BD9CA92C2525A11B003ADA75 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		BD9CA9312525A130003ADA75 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C11E7A65DEE712986065FA63 /* Pods-BrochureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrochureTests.release.xcconfig"; path = "Target Support Files/Pods-BrochureTests/Pods-BrochureTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,7 +194,6 @@
 				BD4C51D62528C55200AE8B09 /* RealmClass.swift */,
 				BD9CA8F825259DDE003ADA75 /* ViewController.swift */,
 				BD9CA9272525A0FB003ADA75 /* DetailViewController.swift */,
-				BD9CA92C2525A11B003ADA75 /* EditViewController.swift */,
 				BD9CA9312525A130003ADA75 /* AddViewController.swift */,
 				BD9CA8FA25259DDE003ADA75 /* Main.storyboard */,
 				BD6E48E9253A22E20066B825 /* Assets 2.xcassets */,
@@ -495,7 +492,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD625A3C25358E310004C2A4 /* DetailSecondTableViewCell.swift in Sources */,
-				BD9CA92D2525A11B003ADA75 /* EditViewController.swift in Sources */,
 				BD9CA8F925259DDE003ADA75 /* ViewController.swift in Sources */,
 				BD4EE4B02531BF2000CC31BD /* AddFirstTableViewCell.swift in Sources */,
 				BD625A3525358B8E0004C2A4 /* DetailFirstTableViewCell.swift in Sources */,
@@ -687,7 +683,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Brochure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -710,7 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Brochure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
